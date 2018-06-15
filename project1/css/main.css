@@ -18,14 +18,20 @@ html, body {
  Containers
 ==================
 */
-.container {
+#container {
   width: 100%
   /* Do I want to put flex? */
 }
 
-.board_container {
-  width: 700px;
-  height: 600px
+#input_container {
+  border: 1px solid green;
+  /* width:700px;
+  height: 100px; */
+}
+
+#board_container {
+  /* width: 700px;
+  height: 600px */
 }
 
 /*
@@ -45,4 +51,19 @@ html, body {
   width: 100px;
   height: 100px;
   border: 1px solid grey;
+}
+
+.inputCol {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: grey;
+}
+
+.red {
+
+}
+
+.blue {
+
 }
