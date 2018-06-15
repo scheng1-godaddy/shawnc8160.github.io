@@ -1,0 +1,48 @@
+/*
+==================
+ Elements
+==================
+*/
+* {
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+/*
+==================
+ Containers
+==================
+*/
+.container {
+  width: 100%
+  /* Do I want to put flex? */
+}
+
+.board_container {
+  width: 700px;
+  height: 600px
+}
+
+/*
+==================
+ Board element styling
+==================
+*/
+.row {
+  display: flex;
+  justify-content: flex-start;
+  width: 710px;
+  height: 100px;
+}
+
+.col {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid grey;
+}
