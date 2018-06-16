@@ -71,11 +71,13 @@ html, body {
 }
 
 .inputCol {
+  border: 1px solid black;
   display: inline-block;
   width: 75px;
   height: 75px;
   background-image: url("../images/keyboard_arrow_down_grey_192x192.png");
   background-size: cover;
+  opacity: .5;
 }
 
 .red {

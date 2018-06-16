@@ -50,7 +50,16 @@ const UI = {
           .addClass('inputCol')
           .attr('inputcolnum', col)
           // Add listener for click
-          .on('click', EventHandler.inputHandler)
+          .on('drop', EventHandler.inputHandler)
+          // Adding droppable
+          .droppable({
+              over: function(event, ui) {
+                  $(this).css('opacity', '1');
+              },
+              out: function(event, ui) {
+                  $(this).css('opacity', '.5');
+              }
+          })
       $row.append($cell);
     }
     // Input created, append

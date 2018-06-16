@@ -18,7 +18,7 @@ const App ={
     // Display message for whose turn
     $('#msg').text(`${this.curPlayer} turn`);
     // Create new chip (div) and append to the correct side bar
-    $newChip = $('<div>').addClass(this.curPlayer).draggable();
+    $newChip = $('<div>').addClass(this.curPlayer).draggable({ snap: ".ui-droppable" });
     $(`#${this.curPlayer}_container`).append($newChip);
   },
 
