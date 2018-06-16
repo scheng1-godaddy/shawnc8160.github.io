@@ -12,11 +12,25 @@ const App ={
   // -----------------
   // Ends the current turn
   // -----------------
-  endTurn: function() {
+  startTurn: function() {
     // Swaps player
     this.curPlayer = (this.curPlayer === 'red') ? 'blue' : 'red';
+    // Display message for whose turn
+    $('#msg').text(`${this.curPlayer} turn`);
+
+  },
+
+  // -----------------
+  // Ends the current turn
+  // -----------------
+  endTurn: function() {
     // Keep count of how many turns (maybe for future use)
     this.gameCount++;
+
+    // Might put logic here to check for end game
+
+    // Call next function to start next turn
+    this.startTurn();
   }
 
   // // -----------------

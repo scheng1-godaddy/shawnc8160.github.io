@@ -18,13 +18,11 @@ const EventHandler = {
       // Choose the earliest one
       const $cell = $cols.eq($cols.length-1)
       console.log(`cell selected is: ${$cell}`);
+      // Set cell for current player
       $cell.css('background', App.curPlayer);
       $cell.removeClass('none').addClass(App.curPlayer);
+      // End the turn
       App.endTurn();
-    } else {
-      // Nothing found
-      return null;
     }
   }
-
 }

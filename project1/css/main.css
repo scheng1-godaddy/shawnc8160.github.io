@@ -4,6 +4,7 @@
 ==================
 */
 * {
+  /* border: 1px solid gold; */
 }
 
 html, body {
@@ -18,20 +19,36 @@ html, body {
  Containers
 ==================
 */
+
 #container {
-  width: 100%
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#left_container {
+  width: 100px;
+  height: 100%;
+}
+
+
+#center_container {
+  display: inline-block;
+  /* width: 710px; */
   /* Do I want to put flex? */
 }
 
-#input_container {
-  border: 1px solid green;
-  /* width:700px;
-  height: 100px; */
+#right_container {
+  width: 100px;
+  height: 100%;
 }
 
-#board_container {
-  /* width: 700px;
-  height: 600px */
+#score_container {
+  height: 75px;
+  vertical-align: center;
+  text-align: center;
 }
 
 /*
@@ -42,22 +59,23 @@ html, body {
 .row {
   display: flex;
   justify-content: flex-start;
-  width: 710px;
-  height: 100px;
+  /* width: 710px;
+  height: 100px; */
 }
 
 .col {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   border: 1px solid grey;
 }
 
 .inputCol {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  background: grey;
+  width: 75px;
+  height: 75px;
+  background-image: url("../images/keyboard_arrow_down_grey_192x192.png");
+  background-size: cover;
 }
 
 .red {
