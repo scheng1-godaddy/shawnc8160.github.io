@@ -11,6 +11,12 @@
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+    <!-- along with jquery ui... -->
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+    <!-- imports for connect 4 -->
     <script type="text/javascript" src="js/eventhandlers.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
@@ -22,7 +28,7 @@
     <!-- Container for the whole game -->
     <div id="container">
       <!-- container for left side bar -->
-      <div id="left_container"></div>
+      <div id="red_container"></div>
       <!-- main container for the board -->
       <div id="center_container">
         <!-- Where score will be held / Maybe messages too -->
@@ -37,7 +43,7 @@
         <div id="controls_container"></div>
       </div>
       <!-- container for right side bar -->
-      <div id="right_container"></div>
+      <div id="blue_container"></div>
     </div>
   </body>
 </html>

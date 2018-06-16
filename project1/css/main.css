@@ -28,7 +28,7 @@ html, body {
   align-items: center;
 }
 
-#left_container {
+#red_container {
   width: 100px;
   height: 100%;
 }
@@ -40,7 +40,7 @@ html, body {
   /* Do I want to put flex? */
 }
 
-#right_container {
+#blue_container {
   width: 100px;
   height: 100%;
 }
@@ -79,9 +79,13 @@ html, body {
 }
 
 .red {
-
+  width: 75px;
+  height: 75px;
+  background-color: red;
 }
 
 .blue {
-
+  width: 75px;
+  height: 75px;
+  background-color: blue;
 }

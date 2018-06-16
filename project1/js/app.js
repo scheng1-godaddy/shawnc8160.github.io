@@ -17,7 +17,9 @@ const App ={
     this.curPlayer = (this.curPlayer === 'red') ? 'blue' : 'red';
     // Display message for whose turn
     $('#msg').text(`${this.curPlayer} turn`);
-
+    // Create new chip (div) and append to the correct side bar
+    $newChip = $('<div>').addClass(this.curPlayer).draggable();
+    $(`#${this.curPlayer}_container`).append($newChip);
   },
 
   // -----------------
