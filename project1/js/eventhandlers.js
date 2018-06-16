@@ -18,8 +18,9 @@ const EventHandler = {
       // Choose the earliest one
       const $cell = $cols.eq($cols.length-1)
       console.log(`cell selected is: ${$cell}`);
-      $cell.css('background', 'red');
-      $cell.removeClass('none').addClass('red');
+      $cell.css('background', App.curPlayer);
+      $cell.removeClass('none').addClass(App.curPlayer);
+      App.endTurn();
     } else {
       // Nothing found
       return null;
