@@ -20,11 +20,21 @@ const EventHandler = {
     if ($cols.length > 0) {
       // Choose the earliest one
       const $cell = $cols.eq($cols.length-1)
+
+      //What's offset for that div?
+      console.log(`The offset top is `, $cell.offset().top);
+      console.log(`The offset left is `, $cell.offset().left);
+
+      // Animate the draggable!
+      $(ui.draggable).animate({marginTop: $cell.offset().top}, 400, 'swing', function() {
+        $(ui.draggable).remove();
+      });
+
       // Set cell for current player
-      $cell.css('background', App.curPlayer);
+      // $cell.css('background', App.curPlayer);
       $cell.removeClass('none').addClass(App.curPlayer);
       // Remove draggable item (might just want to remove draggable property and do animation)
-      ui.draggable.remove();
+      //ui.draggable.remove();
       // End the turn
       App.endTurn($cell);
     }

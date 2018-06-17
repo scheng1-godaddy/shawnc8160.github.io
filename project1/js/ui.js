@@ -37,6 +37,26 @@ const UI = {
   },
 
   // -----------------
+  // Creates the game board cover styling
+  // -----------------
+  createBoardCover: function () {
+    console.log(`Creating board cover with: ${this.rowNum} rows and ${this.colNum} columns`);
+    for(let row=1; row <= this.rowNum; row++) {
+      // Create the row container, add identifier for row number
+      const $row = $('<div>').addClass('row');
+      for(let col=1; col <= UI.colNum; col++) {
+        // Add each cell to the row container, add identifier for column number
+        const $cell =
+          $('<div>')
+            .addClass('colcover')
+        $row.append($cell);
+      }
+      // Row created, prepend it
+      $('#board_cover_container').append($row);
+    }
+  },
+
+  // -----------------
   // Creates the input area
   // -----------------
   createInputArea: function () {

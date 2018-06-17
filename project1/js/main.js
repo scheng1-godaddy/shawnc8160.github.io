@@ -10,5 +10,6 @@ $(() => {
   UI.createInputArea();
   // Create the board first
   UI.createBoard();
+  UI.createBoardCover();
   App.startTurn();
 })
