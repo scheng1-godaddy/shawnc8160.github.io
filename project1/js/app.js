@@ -21,7 +21,7 @@ const App ={
     this.curPlayer = (this.curPlayer === 'red') ? 'blue' : 'red';
     // Display message for whose turn
     $('#msg').text(`${this.curPlayer} turn`);
-    // Create new chip (div)
+    // Create new chip (div), make it draggable and able to snap into the input area
     $newChip = $('<div>').addClass(this.curPlayer).draggable({ snap: ".ui-droppable" });
     // Append new chip to the correct side bar
     $(`#${this.curPlayer}_container`).append($newChip);
@@ -61,13 +61,32 @@ const App ={
   // Check win, calls other helper functions
   // -----------------
   winCheck: function($cell) {
+
     console.log("Check win has ", $cell);
-    // Check horizontally for a winner
+
+    // Check horizontally count matches
     this.checkCell($cell, 0, 1);
     this.checkCell($cell, 0, -1);
     // Check for winner
     this.winEval();
 
+    // Check vertically count matches
+    this.checkCell($cell, 1, 0);
+    this.checkCell($cell, -1, 0);
+    // Check for winner
+    this.winEval();
+
+    // Check diagonally (left-bottom to top-right) for a winner
+    this.checkCell($cell, 1, 1);
+    this.checkCell($cell, -1, -1);
+    // Check for winner
+    this.winEval();
+
+    // Check diagonally (left-top to bottom-right) for a winner
+    this.checkCell($cell, 1, -1);
+    this.checkCell($cell, -1, 1);
+    // Check for winner
+    this.winEval();
 
     // After all the checks, reset the checkRowNum and checkColNum
     this.checkRowNum = 0;
@@ -75,7 +94,9 @@ const App ={
   },
 
   // -----------------
-  // Checks horizontal,
+  // Checks adjacent cells for a match. Direction of check is based
+  // on the parameters given
+  //
   // Parameters: $cell - the current cell (as jquery object)
   //              row - if negative: looks down
   //                    if positive, looks up
