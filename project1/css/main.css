@@ -12,7 +12,11 @@ html, body {
   padding: 0;
   font-family: sans-serif;
   font-size: 12px;
-  background-color: gray;
+}
+
+body {
+  background: url('../images/vector_background.png');
+  background-size: cover;
 }
 
 /*
@@ -27,6 +31,19 @@ html, body {
   flex-direction: row;
   /* justify-content: center; */
   align-items: center;
+  animation: pulse 10s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(0,31,63, 0.4);
+  }
+  50% {
+    background-color: rgb(255,65,54, 0.2);
+  }
+  100% {
+    background-color: rgba(0,31,63, 0.4);
+  }
 }
 
 #red_container {
@@ -39,6 +56,10 @@ html, body {
   display: inline-block;
   /* width: 710px; */
   /* Do I want to put flex? */
+}
+
+#board_container {
+  box-shadow: 5px 5px 20px;
 }
 
 #blue_container {
@@ -110,3 +131,10 @@ html, body {
   background-image: url('../images/Smiling_Devil_Emoji_small.png');
   background-size: cover;
 }
+
+
+/*
+==================
+ Background animation
+==================
+*/
