@@ -1,5 +1,13 @@
 /*
 ==================
+ Import fonts
+==================
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Monofett');
+
+/*
+==================
  Elements
 ==================
 */
@@ -60,6 +68,7 @@ body {
 
 #board_container {
   box-shadow: 5px 5px 20px;
+  background-color: #383838;
 }
 
 #blue_container {
@@ -67,11 +76,7 @@ body {
   height: 100%;
 }
 
-#score_container {
-  height: 75px;
-  vertical-align: center;
-  text-align: center;
-}
+
 
 /*
 ==================
@@ -132,9 +137,54 @@ body {
   background-size: cover;
 }
 
-
 /*
 ==================
- Background animation
+ Score board / Message Prompt area
 ==================
 */
+#score_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 75px;
+  vertical-align: center;
+  text-align: center;
+  border: 1px solid gray;
+  background: url('../images/prompt_background.png');
+  background-size: cover;
+  box-shadow: 3px 3px 12px;
+}
+
+#p1_score_container {
+  width: 95px;
+  height: 60px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#p2_score_container {
+  width: 95px;
+  height: 60px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#msg_container {
+  width: 300px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  font-family: 'Monofett', cursive;
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid gold;
+  color: blue;
+}
+
+
+
+#msg {
+  margin: 0;
+  padding: 0;
+}

@@ -20,7 +20,7 @@ const App ={
     // Swaps player
     this.curPlayer = (this.curPlayer === 'red') ? 'blue' : 'red';
     // Display message for whose turn
-    $('#msg').text(`${this.curPlayer} turn`);
+    $('#msg').text(`${this.curPlayer} turn`).css('color', this.curPlayer);
     // Create new chip (div), make it draggable and able to snap into the input area
     $newChip = $('<div>').addClass(this.curPlayer).draggable({ snap: ".ui-droppable" });
     // Append new chip to the correct side bar
