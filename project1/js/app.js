@@ -48,8 +48,11 @@ const App ={
     console.log(`Check count is: ${this.checkCount}`);
     // Check if we have a winner?
     if (this.checkCount >= this.winAmount) {
-        //We have a winner
+        //We have a winner, prompt the user
         console.log(`${this.curPlayer} has won the game`);
+        $('#message_prompt').text(`${this.curPlayer} Won!`)
+        $('#message_prompt').css('color', `${this.curPlayer}`);
+        $('#message_prompt').css('display', 'block');
         // Reset the game and take score
 
     } else {
