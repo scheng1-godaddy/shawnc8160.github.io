@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- For now, just one stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Using jquery! -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <!-- along with jquery ui... -->
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+    <!-- imports for connect 4 -->
+    <script type="text/javascript" src="js/eventhandlers.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <title>Connect 4 - Shawn's project!</title>
+  </head>
+  <body id="snow">
+    <!-- Container for the whole game -->
+    <div id="container">
+      <!-- container for blue side bar -->
+      <div id="blue_container"></div>
+      <!-- container for left side bar -->
+      <div id="red_container"></div>
+      <!-- main container for the board -->
+      <div id="center_container">
+        <!-- Where score will be held / and messages too -->
+        <div id="score_container">
+          <!-- Div for player 1 score -->
+          <div id="p1_score_container"></div>
+          <!-- Div to hold message prompt -->
+          <div id="msg_container">
+            <p id="msg"></p>
+          </div>
+          <!-- Div for player 2 score -->
+          <div id="p2_score_container"></div>
+        </div>
+        <!-- Container for the area right above the board, where chips are dropped -->
+        <div id="input_container"></div>
+        <!-- Here's the div that the board will go onto -->
+        <div id="board_container"></div>
+        <!-- Here's the div that the board styling will go onto -->
+        <div id="board_cover_container"></div>
+        <!-- Here's the div for controls -->
+        <div id="controls_container"></div>
+      </div>
+    </div>
+  </body>
+</html>
