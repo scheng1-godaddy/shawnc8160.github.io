@@ -196,8 +196,11 @@ body {
   background-color: rgba(0, 0, 0, 0.60);
   padding: 0;
   margin: 0;
+  font-size: 80px;
   font-family: 'Codystar', cursive;
-  margin-right: 10px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #p2_logo {
@@ -214,7 +217,11 @@ body {
   margin: 0;
   margin-left: 10px;
   background-color: rgba(0, 0, 0, 0.60);
+  font-size: 80px;
   font-family: 'Codystar', cursive;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #score_center_container {
@@ -244,7 +251,7 @@ body {
 
 #message_prompt {
   height: 100px;
-  transform:translateY(-1000px);
+  transform:translateY(-950px);
   text-align: center;
   vertical-align: center;
   font-family: 'Bangers', cursive;
@@ -256,12 +263,12 @@ body {
 
 @keyframes mainprompt {
   0% {
-    transform: translateY(-1000px) scale(.2);
+    transform: translateY(-950px) scale(.2);
   }
   25% {
-    transform: translateY(-1000px) scale(1.7);
+    transform: translateY(-950px) scale(1.7);
   }
   50% {
-    transform: translateY(-1000px) scale(1);
+    transform: translateY(-950px) scale(1);
   }
 }

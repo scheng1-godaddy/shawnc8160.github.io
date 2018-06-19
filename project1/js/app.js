@@ -15,12 +15,14 @@ const App ={
     id: 'player1',
     name: 'Hangry',
     color: 'red',
+    score: 0,
     logo: '../images/Very_Angry_Emoji_small.png'
   },
   player2: {
     id: 'player2',
     name: 'El Diablo',
     color: 'purple',
+    score: 0,
     logo: '../images/Smiling_Devil_Emoji_small.png'
   },
   curPlayer: this.player1,
@@ -68,7 +70,8 @@ const App ={
         $('#message_prompt').css('color', `${this.curPlayer.color}`);
         $('#message_prompt').css('display', 'block');
         // Reset the game and take score
-
+        this.curPlayer.score++;
+        UI.updateScore();
     } else {
       this.checkCount = 0;
     }

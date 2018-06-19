@@ -84,6 +84,13 @@ const UI = {
     }
     // Input created, append
     $('#input_container').append($row);
+  },
 
+  // -----------------
+  // Update Score
+  // -----------------
+  updateScore: function () {
+    $('#p1_score').text(`${App.player1.score}`);
+    $('#p2_score').text(`${App.player2.score}`);
   }
 }
