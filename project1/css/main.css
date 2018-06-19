@@ -13,7 +13,7 @@
 ==================
 */
 * {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
 }
 
 html, body {
@@ -55,7 +55,7 @@ body {
   }
 }
 
-#red_container {
+#player1_container {
   width: 100px;
   height: 100%;
 }
@@ -72,11 +72,15 @@ body {
   background-color: #383838;
 }
 
-#blue_container {
+#player2_container {
   width: 100px;
   height: 100%;
 }
 
+#purple_container {
+  width: 100px;
+  height: 100%;
+}
 
 
 /*
@@ -117,7 +121,7 @@ body {
   display: inline-block;
   width: 75px;
   height: 120px;
-  background-image: url("../images/keyboard_arrow_down_grey_192x192.png");
+  background-image: url("../images/keyboard_arrow_down_darker.png");
   background-size: cover;
   opacity: .5;
 }
@@ -131,6 +135,14 @@ body {
 }
 
 .blue {
+  width: 75px;
+  height: 75px;
+  /* background-color: blue; */
+  background-image: url('../images/Smiling_Devil_Emoji_small.png');
+  background-size: cover;
+}
+
+.purple {
   width: 75px;
   height: 75px;
   /* background-color: blue; */
@@ -246,10 +258,10 @@ body {
   0% {
     transform: translateY(-1000px) scale(.2);
   }
-  50% {
+  25% {
     transform: translateY(-1000px) scale(1.7);
   }
-  100% {
+  50% {
     transform: translateY(-1000px) scale(1);
   }
 }

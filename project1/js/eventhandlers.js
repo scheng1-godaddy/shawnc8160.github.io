@@ -28,16 +28,9 @@ const EventHandler = {
       // Animate the draggable!
       $(ui.draggable).animate({marginTop: $cell.offset().top}, 400, 'swing', function() {
         $(ui.draggable).remove();
-        $cell.removeClass('none').addClass(App.curPlayer);
+        $cell.removeClass('none').addClass(App.curPlayer.color);
         App.endTurn($cell);
       });
-
-      // Set cell for current player
-      // $cell.css('background', App.curPlayer);
-      // $cell.removeClass('none').addClass(App.curPlayer);
-      // Remove draggable item (might just want to remove draggable property and do animation)
-      //ui.draggable.remove();
-      // End the turn
 
     }
   }

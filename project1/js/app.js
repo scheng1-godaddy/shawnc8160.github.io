@@ -6,25 +6,39 @@ const App ={
   // -----------------
   // Properties for the game
   // -----------------
-  curPlayer: 'red',
   winAmount: 3,
   gameCount: 0,
   checkRowNum: 0,
   checkColNum: 0,
   checkCount: 0,
+  player1: {
+    id: 'player1',
+    name: 'Hangry',
+    color: 'red',
+    logo: '../images/Very_Angry_Emoji_small.png'
+  },
+  player2: {
+    id: 'player2',
+    name: 'El Diablo',
+    color: 'purple',
+    logo: '../images/Smiling_Devil_Emoji_small.png'
+  },
+  curPlayer: this.player1,
 
   // -----------------
   // Starts the current turn
   // -----------------
   startTurn: function() {
+    console.log("Starting new turn");
     // Swaps player
-    this.curPlayer = (this.curPlayer === 'red') ? 'blue' : 'red';
+    this.curPlayer = (this.curPlayer === this.player1) ? this.player2 : this.player1;
     // Display message for whose turn
-    $('#msg').text(`${this.curPlayer} turn`).css('color', this.curPlayer);
+    // $('#message_prompt').text(`${this.curPlayer.name} turn`).css('color', this.curPlayer.color);
     // Create new chip (div), make it draggable and able to snap into the input area
-    $newChip = $('<div>').addClass(this.curPlayer).draggable({ snap: ".ui-droppable" });
+    $newChip = $('<div>').addClass(this.curPlayer.color).draggable({ snap: ".ui-droppable" });
+    console.log("Created new chip", $newChip);
     // Append new chip to the correct side bar
-    $(`#${this.curPlayer}_container`).append($newChip);
+    $(`#${this.curPlayer.id}_container`).append($newChip);
   },
 
   // -----------------
@@ -49,9 +63,9 @@ const App ={
     // Check if we have a winner?
     if (this.checkCount >= this.winAmount) {
         //We have a winner, prompt the user
-        console.log(`${this.curPlayer} has won the game`);
-        $('#message_prompt').text(`${this.curPlayer} Won!`)
-        $('#message_prompt').css('color', `${this.curPlayer}`);
+        console.log(`${this.curPlayer.name} has won the game`);
+        $('#message_prompt').text(`${this.curPlayer.name} Won!`)
+        $('#message_prompt').css('color', `${this.curPlayer.color}`);
         $('#message_prompt').css('display', 'block');
         // Reset the game and take score
 
@@ -92,6 +106,7 @@ const App ={
     this.winEval();
 
     // After all the checks, reset the checkRowNum and checkColNum
+    console.log("Didn't find a winner");
     this.checkRowNum = 0;
     this.checkColNum = 0;
   },
@@ -133,7 +148,7 @@ const App ={
       (matchFound) && (this.checkCount <= this.winAmount)) {
       // Check if the cell matches
       // console.log($nextCell.hasClass(`${this.curPlayer}`));
-      if ($nextCell.hasClass(`${this.curPlayer}`)) {
+      if ($nextCell.hasClass(`${this.curPlayer.color}`)) {
         console.log('Found match');
         // If it does, increment checkCount
         this.checkCount++;
