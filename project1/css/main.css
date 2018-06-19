@@ -83,6 +83,14 @@ body {
 }
 
 
+#controls_container > p {
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  color: white;
+}
+
+
+
 /*
 ==================
  Board element styling
@@ -91,8 +99,6 @@ body {
 .row {
   display: flex;
   justify-content: flex-start;
-  /* width: 710px;
-  height: 100px; */
 }
 
 .col {
@@ -234,7 +240,8 @@ body {
   padding: 0;
   margin: 0;
   /* border: 1px solid gold; */
-  color: #457a5f;
+  /* color: #457a5f; */
+  color: white;
 }
 
 #score_center{
@@ -271,4 +278,53 @@ body {
   50% {
     transform: translateY(-950px) scale(1);
   }
+}
+
+#controls_container {
+  display: none;
+  position: absolute;
+  top: 220px;
+  background: #bc3e00;
+  width: 525px;
+  height: 150px;
+  text-align: center;
+  animation: restartPrompt 1s 1;
+}
+
+@keyframes restartPrompt {
+  0% {
+    transform: scaleY(.2);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    /* border: 2px solid #4CAF50; */
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
 }

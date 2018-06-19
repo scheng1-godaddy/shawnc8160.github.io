@@ -64,54 +64,61 @@ const App ={
     console.log(`Check count is: ${this.checkCount}`);
     // Check if we have a winner?
     if (this.checkCount >= this.winAmount) {
-        //We have a winner, prompt the user
-        console.log(`${this.curPlayer.name} has won the game`);
-        $('#message_prompt').text(`${this.curPlayer.name} Won!`)
-        $('#message_prompt').css('color', `${this.curPlayer.color}`);
-        $('#message_prompt').css('display', 'block');
-        // Reset the game and take score
-        this.curPlayer.score++;
-        UI.updateScore();
+      //We have a winner, prompt the user
+      console.log(`${this.curPlayer.name} has won the game`);
+      $('#message_prompt').text(`${this.curPlayer.name} Won!`)
+      $('#message_prompt').css('color', `${this.curPlayer.color}`);
+      $('#message_prompt').css('display', 'block');
+      // Reset the game and take score
+      this.curPlayer.score++;
+      UI.updateScore();
+      return true;
     } else {
       this.checkCount = 0;
+      return false;
     }
   },
 
   // -----------------
   // Check win, calls other helper functions
+  // Takes parameter $cell which is the cell that was just populated with a chip.
   // -----------------
   winCheck: function($cell) {
-
-    console.log("Check win has ", $cell);
-
-    // Check horizontally count matches
-    this.checkCell($cell, 0, 1);
-    this.checkCell($cell, 0, -1);
-    // Check for winner
-    this.winEval();
-
-    // Check vertically count matches
-    this.checkCell($cell, 1, 0);
-    this.checkCell($cell, -1, 0);
-    // Check for winner
-    this.winEval();
-
-    // Check diagonally (left-bottom to top-right) for a winner
-    this.checkCell($cell, 1, 1);
-    this.checkCell($cell, -1, -1);
-    // Check for winner
-    this.winEval();
-
-    // Check diagonally (left-top to bottom-right) for a winner
-    this.checkCell($cell, 1, -1);
-    this.checkCell($cell, -1, 1);
-    // Check for winner
-    this.winEval();
+    // Array holds the values to increment row/column numbers to look at the next cell
+    // The outer most array holds values for horizontal, vertical, diagonal (both ways)
+    // The middle array holds values for a certain direction (i.e. left or right)
+    // The numbers themselves represent the row and column values to increment/decrement by. The row number goes before the column number.
+    directionArray = [
+      [[0, 1], [0, -1]], // checks horizontally
+      [[1, 0], [-1, 0]], // checks vertically
+      [[1, 1], [-1, -1]], // Check diagonally (left-bottom to top-right)
+      [[1, -1], [-1, 1]] // Check diagonally (left-top to bottom-right)
+    ]
+    let winner = false;
+    // Loop through the directionArray and try to find a winner.
+    outer:
+    for (direction of directionArray) {
+      inner:
+      for(bothWays of direction) {
+        this.checkCell($cell, bothWays[0], bothWays[1])
+      }
+      if (this.winEval()) {
+        // We find a winner, break out of the outer loop
+        winner = true;
+        break outer;
+      }
+    }
 
     // After all the checks, reset the checkRowNum and checkColNum
-    console.log("Didn't find a winner");
     this.checkRowNum = 0;
     this.checkColNum = 0;
+
+    if (winner) {
+      console.log("Found a winner!");
+      $('#controls_container').css('display', 'block');
+      $('#restart_yes').on('click', this.restartGame);
+    }
+
   },
 
   // -----------------
@@ -166,6 +173,26 @@ const App ={
       }
     } // End while loop here
 
-  }// Close checkCell function
+  }, // Close checkCell function
+
+  // -----------------
+  // Resets the game
+  // -----------------
+  resetGame: function() {
+
+  },
+
+  // -----------------
+  // starts a new game
+  // -----------------
+  restartGame: function() {
+    // Get rid of any messages
+    $('#message_prompt').css('display', 'none');
+    $('#controls_container').css('display', 'none');
+
+    // Clear the board and recreate
+    $('#board_container').empty();
+    UI.createBoard();
+  }
 
 } // Close App object
