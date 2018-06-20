@@ -14,6 +14,8 @@ $(() => {
   UI.createBoardCover();
   // Update the score board
   UI.updateScore();
+  // Bind the UI
+  UI.bindUI();
   // Start the game
   App.startTurn();
 })

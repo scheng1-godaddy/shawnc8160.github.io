@@ -92,5 +92,16 @@ const UI = {
   updateScore: function () {
     $('#p1_score').text(`${App.player1.score}`);
     $('#p2_score').text(`${App.player2.score}`);
+  },
+
+  // -----------------
+  // Binds handlers to UI buttons
+  // -----------------
+  bindUI: function () {
+
+    $('#left_menu_icon').on('click', () => {
+      console.log("Restarting game");
+      App.restartGame();
+    });
   }
 }
