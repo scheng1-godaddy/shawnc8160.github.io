@@ -55,9 +55,25 @@ body {
   }
 }
 
+#player_container {
+  width: 300px;
+  height: 120px;
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  background-image: url('../images/sidebanner.png');
+  background-size: cover;
+  /* height: 100px; */
+}
+
+
 #player1_container {
   width: 100px;
-  height: 100%;
+  /* display: inline-block; */
+  /* height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; */
 }
 
 
@@ -74,7 +90,12 @@ body {
 
 #player2_container {
   width: 100px;
+  /* display: inline-block; */
+  /* width: 150px;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; */
 }
 
 #purple_container {
@@ -136,6 +157,7 @@ body {
   width: 75px;
   height: 75px;
   /* background-color: red; */
+  display: block;
   background-image: url('../images/Very_Angry_Emoji_small.png');
   background-size: cover;
 }
@@ -143,6 +165,7 @@ body {
 .blue {
   width: 75px;
   height: 75px;
+  display: block;
   /* background-color: blue; */
   background-image: url('../images/Smiling_Devil_Emoji_small.png');
   background-size: cover;
@@ -151,10 +174,25 @@ body {
 .purple {
   width: 75px;
   height: 75px;
+  display: block;
   /* background-color: blue; */
   background-image: url('../images/Smiling_Devil_Emoji_small.png');
   background-size: cover;
 }
+
+.newchip {
+  animation: rollIn 1s 1;
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateX(-250px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(1080deg);
+  }
+}
+
 
 /*
 ==================
@@ -186,7 +224,7 @@ body {
 #p2_score_container {
   width: 190px;
   height: 90px;
-  display: inline-block;
+  /* display: inline-block; */
   display: flex;
 }
 
@@ -242,7 +280,7 @@ body {
   margin: 0;
   /* border: 1px solid gold; */
   /* color: #457a5f; */
-  color: white;
+  color: brown;
 }
 
 #score_center{
@@ -284,7 +322,7 @@ body {
 #controls_container {
   display: none;
   position: absolute;
-  top: 220px;
+  top: 270px;
   background: #bc3e00;
   width: 525px;
   height: 150px;

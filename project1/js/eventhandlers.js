@@ -26,7 +26,7 @@ const EventHandler = {
       console.log(`The offset left is `, $cell.offset().left);
 
       // Animate the draggable!
-      $(ui.draggable).animate({marginTop: $cell.offset().top}, 400, 'swing', function() {
+      $(ui.draggable).animate({marginTop: $cell.offset().top+120}, 400, 'swing', function() {
         $(ui.draggable).remove();
         $cell.removeClass('none').addClass(App.curPlayer.color);
         App.endTurn($cell);
