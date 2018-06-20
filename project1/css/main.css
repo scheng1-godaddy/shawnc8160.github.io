@@ -36,11 +36,16 @@ body {
 
 #container {
   width: 100%;
+
+  animation: pulse 10s infinite;
+}
+
+#main_container {
+  margin: auto;
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  animation: pulse 10s infinite;
 }
 
 @keyframes pulse {
@@ -55,27 +60,35 @@ body {
   }
 }
 
-#player_container {
+#leftside_container, #rightside_container {
   width: 300px;
+  min-width: 300px;
   height: 120px;
-  display: flex;
+  display: inline-flex;
   align-items:center;
   justify-content: flex-end;
   background-image: url('../images/sidebanner.png');
   background-size: cover;
-  /* height: 100px; */
 }
 
 
-#player1_container {
+#player1_container, #player2_container {
   width: 100px;
-  /* display: inline-block; */
-  /* height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; */
 }
 
+.menu {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+}
+
+
+
+.menu img {
+  width: 90px;
+  height: 90px;
+}
 
 #center_container {
   display: inline-block;
@@ -88,20 +101,10 @@ body {
   background-color: #383838;
 }
 
-#player2_container {
-  width: 100px;
-  /* display: inline-block; */
-  /* width: 150px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; */
-}
-
-#purple_container {
+/* #purple_container {
   width: 100px;
   height: 100%;
-}
+} */
 
 
 #controls_container > p {
@@ -180,19 +183,31 @@ body {
   background-size: cover;
 }
 
-.newchip {
-  animation: rollIn 1s 1;
+.newchip.player1 {
+  animation: rollInLeft 1s 1;
 }
 
-@keyframes rollIn {
+.newchip.player2 {
+  animation: rollInRight 1s 1;
+}
+
+@keyframes rollInLeft {
   0% {
-    transform: translateX(-250px) rotate(0deg);
+    transform: translateX(-200px) rotate(0deg);
   }
   100% {
     transform: translateX(0px) rotate(1080deg);
   }
 }
 
+@keyframes rollInRight {
+  0% {
+    transform: translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(1080deg);
+  }
+}
 
 /*
 ==================
@@ -375,10 +390,9 @@ body {
 ==================
 */
 
-#menu {
+/* #menu {
   width: 300px;
   height: 100px;
-  /* border: 1px solid black; */
   position: absolute;
   top: 0;
   left: 0;
@@ -392,10 +406,9 @@ body {
 #menu_restart_container{
   width: 75px;
   height: 75px;
-  /* border: 1px solid black; */
 }
 
 #menu img {
   width: 75px;
   height: 75px;
-}
+} */
