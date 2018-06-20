@@ -37,7 +37,7 @@ const App =  {
     // Display message for whose turn
     // $('#message_prompt').text(`${App.curPlayer.name} turn`).css('color', App.curPlayer.color);
     // Create new chip (div), make it draggable and able to snap into the input area
-    $newChip = $('<div>').addClass(App.curPlayer.color).addClass('newchip').draggable({ snap: ".ui-droppable" });
+    $newChip = $('<div>').addClass(App.curPlayer.color).addClass('newchip').addClass(App.curPlayer.id).draggable({ snap: ".ui-droppable" });
     console.log("Created new chip", $newChip);
     // Append new chip to the correct side bar
     $(`#${App.curPlayer.id}_container`).append($newChip);

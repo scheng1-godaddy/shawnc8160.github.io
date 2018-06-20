@@ -68,8 +68,8 @@ const App =  {
       //We have a winner, prompt the user
       console.log(`${App.curPlayer.name} has won the game`);
       $('#message_prompt').text(`${App.curPlayer.name} Won!`)
-      $('#message_prompt').css('color', `${App.curPlayer.color}`);
-      $('#message_prompt').css('display', 'block');
+      $('#message_prompt').css('background-color', `${App.curPlayer.color}`);
+      $('#message_prompt').css('display', 'flex');
       // Reset the game and take score
       App.curPlayer.score++;
       UI.updateScore();
@@ -186,7 +186,9 @@ const App =  {
 
     // Clear the board and recreate
     $('#board_container').empty();
+    $('#board_container').append($('<div>').attr('id', 'board_cover_container'));
     UI.createBoard();
+    UI.createBoardCover();
 
     // Clear current chip and restart turn
     $(`#player1_container`).empty();
