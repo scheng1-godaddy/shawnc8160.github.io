@@ -367,3 +367,35 @@ body {
     background-color: #4CAF50;
     color: white;
 }
+
+
+/*
+==================
+ Menu
+==================
+*/
+
+#menu {
+  width: 300px;
+  height: 100px;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../images/menu_back.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu_restart_container{
+  width: 75px;
+  height: 75px;
+  /* border: 1px solid black; */
+}
+
+#menu img {
+  width: 75px;
+  height: 75px;
+}
