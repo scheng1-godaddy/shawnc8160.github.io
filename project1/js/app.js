@@ -2,7 +2,7 @@
 // App Object - application logic
 // ==========================================================
 
-const App ={
+const App =  {
   // -----------------
   // Properties for the game
   // -----------------
@@ -31,16 +31,17 @@ const App ={
   // Starts the current turn
   // -----------------
   startTurn: function() {
-    console.log("Starting new turn");
+    console.log("Starting new turn, App value is: ", App);
     // Swaps player
-    this.curPlayer = (this.curPlayer === this.player1) ? this.player2 : this.player1;
+    App.curPlayer = (App.curPlayer === App.player1) ? App.player2 : App.player1;
     // Display message for whose turn
-    // $('#message_prompt').text(`${this.curPlayer.name} turn`).css('color', this.curPlayer.color);
+    // $('#message_prompt').text(`${App.curPlayer.name} turn`).css('color', App.curPlayer.color);
     // Create new chip (div), make it draggable and able to snap into the input area
-    $newChip = $('<div>').addClass(this.curPlayer.color).draggable({ snap: ".ui-droppable" });
+    $newChip = $('<div>').addClass(App.curPlayer.color).draggable({ snap: ".ui-droppable" });
     console.log("Created new chip", $newChip);
     // Append new chip to the correct side bar
-    $(`#${this.curPlayer.id}_container`).append($newChip);
+    $(`#${App.curPlayer.id}_container`).append($newChip);
+    console.log("Start turn, check count is", App.checkCount);
   },
 
   // -----------------
@@ -48,33 +49,33 @@ const App ={
   // -----------------
   endTurn: function($cell) {
     // Keep count of how many turns (maybe for future use)
-    this.gameCount++;
+    App.gameCount++;
 
     // Check if there's a winner
-    this.winCheck($cell);
+    App.winCheck($cell);
 
     // Call next function to start next turn
-    this.startTurn();
+    App.startTurn();
   },
 
   // -----------------
   // Evaluates if there's a winner
   // -----------------
   winEval: function() {
-    console.log(`Check count is: ${this.checkCount}`);
+    console.log(`Check count is: ${App.checkCount}`);
     // Check if we have a winner?
-    if (this.checkCount >= this.winAmount) {
+    if (App.checkCount >= App.winAmount) {
       //We have a winner, prompt the user
-      console.log(`${this.curPlayer.name} has won the game`);
-      $('#message_prompt').text(`${this.curPlayer.name} Won!`)
-      $('#message_prompt').css('color', `${this.curPlayer.color}`);
+      console.log(`${App.curPlayer.name} has won the game`);
+      $('#message_prompt').text(`${App.curPlayer.name} Won!`)
+      $('#message_prompt').css('color', `${App.curPlayer.color}`);
       $('#message_prompt').css('display', 'block');
       // Reset the game and take score
-      this.curPlayer.score++;
+      App.curPlayer.score++;
       UI.updateScore();
       return true;
     } else {
-      this.checkCount = 0;
+      App.checkCount = 0;
       return false;
     }
   },
@@ -100,9 +101,9 @@ const App ={
     for (direction of directionArray) {
       inner:
       for(bothWays of direction) {
-        this.checkCell($cell, bothWays[0], bothWays[1])
+        App.checkCell($cell, bothWays[0], bothWays[1])
       }
-      if (this.winEval()) {
+      if (App.winEval()) {
         // We find a winner, break out of the outer loop
         winner = true;
         break outer;
@@ -110,13 +111,13 @@ const App ={
     }
 
     // After all the checks, reset the checkRowNum and checkColNum
-    this.checkRowNum = 0;
-    this.checkColNum = 0;
+    App.checkRowNum = 0;
+    App.checkColNum = 0;
 
     if (winner) {
       console.log("Found a winner!");
       $('#controls_container').css('display', 'block');
-      $('#restart_yes').on('click', this.restartGame);
+      $('#restart_yes').on('click', App.restartGame);
     }
 
   },
@@ -136,15 +137,15 @@ const App ={
   checkCell: function($cell, row, col) {
 
     // What's the current cell's position
-    this.checkRowNum = Number($cell.attr('rownum'));
-    this.checkColNum = Number($cell.attr('colnum'));
-    console.log(`Checking horizontal for row: ${this.checkRowNum}, col: ${this.checkColNum}`);
+    App.checkRowNum = Number($cell.attr('rownum'));
+    App.checkColNum = Number($cell.attr('colnum'));
+    console.log(`Checking horizontal for row: ${App.checkRowNum}, col: ${App.checkColNum}`);
 
-    // Check for the next cell (this is dependent on what was passed)
-    let rowNum = this.checkRowNum+row;
-    let colNum = this.checkColNum+col;
+    // Check for the next cell (App is dependent on what was passed)
+    let rowNum = App.checkRowNum+row;
+    let colNum = App.checkColNum+col;
     let $nextCell = $(`.col[rownum=${rowNum}][colnum=${colNum}]`);
-    console.log('next cell is:', $nextCell);
+    // console.log('next cell is:', $nextCell);
     let matchFound = true;
     //  Loop and check the cells in certain direction (direction dependent on parameters)
     //  Keep checking as long as these conditions are true:
@@ -155,13 +156,13 @@ const App ={
     while(
       (rowNum > 0) && (colNum > 0) &&
       (rowNum <= UI.rowNum) && (colNum <= UI.colNum) &&
-      (matchFound) && (this.checkCount <= this.winAmount)) {
+      (matchFound) && (App.checkCount <= App.winAmount)) {
       // Check if the cell matches
-      // console.log($nextCell.hasClass(`${this.curPlayer}`));
-      if ($nextCell.hasClass(`${this.curPlayer.color}`)) {
+      // console.log($nextCell.hasClass(`${App.curPlayer}`));
+      if ($nextCell.hasClass(`${App.curPlayer.color}`)) {
         console.log('Found match');
         // If it does, increment checkCount
-        this.checkCount++;
+        App.checkCount++;
 
         // Get the next cell
         rowNum += row;
@@ -176,16 +177,9 @@ const App ={
   }, // Close checkCell function
 
   // -----------------
-  // Resets the game
-  // -----------------
-  resetGame: function() {
-
-  },
-
-  // -----------------
   // starts a new game
   // -----------------
-  restartGame: function() {
+  restartGame: () => {
     // Get rid of any messages
     $('#message_prompt').css('display', 'none');
     $('#controls_container').css('display', 'none');
@@ -193,6 +187,26 @@ const App ={
     // Clear the board and recreate
     $('#board_container').empty();
     UI.createBoard();
+
+    // Clear current chip and restart turn
+    $(`#player1_container`).empty();
+    $(`#player2_container`).empty();
+
+    // Reset check count
+    // App.checkCount = 0;
+    App.checkCount = 0;
+    console.log("Restart game, App check count is: ", App.checkCount);
+    App.startTurn();
+
   }
+
+
+  // -----------------
+  // Resets the game
+  // -----------------
+  // resetGame: function() {
+  //
+  // }
+
 
 } // Close App object

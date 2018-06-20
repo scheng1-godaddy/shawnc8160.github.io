@@ -15,9 +15,9 @@ const UI = {
   // Creates the game board
   // -----------------
   createBoard: function () {
-    console.log(`Creating board with: ${this.rowNum} rows and ${this.colNum} columns`);
+    console.log(`Creating board with: ${UI.rowNum} rows and ${UI.colNum} columns`);
     // Want to create the bottom most row first (going to prepend everything)
-    for(let row=1; row <= this.rowNum; row++) {
+    for(let row=1; row <= UI.rowNum; row++) {
       // Create the row container, add identifier for row number
       const $row = $('<div>').addClass('row').attr('rownum', row);
       for(let col=1; col <= UI.colNum; col++) {
@@ -40,8 +40,8 @@ const UI = {
   // Creates the game board cover styling
   // -----------------
   createBoardCover: function () {
-    console.log(`Creating board cover with: ${this.rowNum} rows and ${this.colNum} columns`);
-    for(let row=1; row <= this.rowNum; row++) {
+    console.log(`Creating board cover with: ${UI.rowNum} rows and ${UI.colNum} columns`);
+    for(let row=1; row <= UI.rowNum; row++) {
       // Create the row container, add identifier for row number
       const $row = $('<div>').addClass('row');
       for(let col=1; col <= UI.colNum; col++) {
