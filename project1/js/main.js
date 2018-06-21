@@ -9,6 +9,8 @@ $(() => {
 
   $('#container').empty();
   UI.createPlayerSelection(1);
+
+
   // UI.createStructure();
   // // Create the input area
   // UI.createInputArea();

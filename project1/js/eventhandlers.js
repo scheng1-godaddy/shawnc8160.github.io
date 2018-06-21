@@ -96,4 +96,27 @@ const EventHandler = {
     UI.rowNum = Number(rowSize);
     UI.colNum = Number(colSize);
   },
-}
+
+  // -----------------
+  // Handler for the submit button on grid selection page
+  // -----------------
+  gridSubmitHandler: function(event) {
+    // Clear the visible elements
+    let $saveDiv = $('#container').detach();
+    $('body').empty().append($saveDiv);
+    // Rebuild the board
+    UI.createStructure();
+    // Create the input area
+    UI.createInputArea();
+    // Create the board first
+    UI.createBoard();
+    // Create the cover for the board
+    UI.createBoardCover();
+    // Update the score board
+    UI.updateScore();
+    // Bind the UI
+    UI.bindUI();
+    // Start the game
+    App.startTurn();
+  }
+}// Closes EventHandler object

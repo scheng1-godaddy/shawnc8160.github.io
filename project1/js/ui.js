@@ -232,7 +232,7 @@ const UI = {
         .addClass('button')
         .addClass('button1')
         .text('Done'))
-        .on('click', EventHandler.nameSubmitHandler)
+        .on('click', EventHandler.gridSubmitHandler)
 
     $gridSelectContainer.append($sectionDivider.attr('id', 'gridselectheader'));
     $gridSelectContainer.append($sectionDivider2.attr('id', 'gridselectarea'));
