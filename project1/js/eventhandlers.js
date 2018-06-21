@@ -101,6 +101,7 @@ const EventHandler = {
   // Handler for the submit button on grid selection page
   // -----------------
   gridSubmitHandler: function(event) {
+
     // Clear the visible elements
     let $saveDiv = $('#container').detach();
     $('body').empty().append($saveDiv);
@@ -116,7 +117,24 @@ const EventHandler = {
     UI.updateScore();
     // Bind the UI
     UI.bindUI();
+
+    $('body').hide().show();
+    $('container').hide().show();
+
     // Start the game
+    // Set the correct dimensons
+    if (UI.rowNum === 6) {
+      $('#message_prompt').width(525);
+      $('#controls_container').width(525);
+    }
+    if (UI.rowNum === 9) {
+      $('#message_prompt').width(750);
+      $('#controls_container').width(750);
+    }
+    if (UI.rowNum === 12) {
+      $('#message_prompt').width(975);
+      $('#controls_container').width(975);
+    }
     App.startTurn();
   }
 }// Closes EventHandler object

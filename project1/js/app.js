@@ -27,7 +27,7 @@ const App =  {
     logo: '../images/Smiling_Devil_Emoji_small.png'
   },
   curPlayer: this.player1,
-  emoticons: [
+  emoticonsMaster: [
     {
       name: 'Hangry',
       color: 'red',
@@ -39,6 +39,7 @@ const App =  {
       logo: 'images/Smiling_Devil_Emoji_small.png'
     }
   ],
+  emoticons: [],
 
   // -----------------
   // Starts the current turn
@@ -131,6 +132,7 @@ const App =  {
       console.log("Found a winner!");
       $('#controls_container').css('display', 'block');
       $('#restart_yes').on('click', App.restartGame);
+      $('#restart_no').on('click', App.resetGame);
     }
 
   },
@@ -213,15 +215,25 @@ const App =  {
     console.log("Restart game, App check count is: ", App.checkCount);
     App.startTurn();
 
-  }
+  },
 
 
   // -----------------
   // Resets the game
   // -----------------
-  // resetGame: function() {
-  //
-  // }
+  resetGame: function() {
+    App.checkRowNum = 0;
+    App.checkColNum = 0;
+    App.checkCount = 0;
+    App.selectedEmojiIndex = 0;
+    App.player1.score = 0;
+    App.player2.score = 0;
+
+    App.emoticons = App.emoticonsMaster.slice();
+
+    $('#container').empty();
+    UI.createPlayerSelection(1);
+  }
 
 
 } // Close App object

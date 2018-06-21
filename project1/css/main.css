@@ -26,8 +26,7 @@ html, body {
 
 body {
   height: 100%;
-  background: url('../images/forest.jpg');
-  background-repeat: no-repeat;
+  background: url('../images/forest.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Bangers', cursive;
 }
@@ -54,13 +53,13 @@ body {
 
 @keyframes pulse {
   0% {
-    background-color: rgba(0,31,63, 0.4);
+    background-color: rgba(0,31,63, 0.5);
   }
   50% {
     background-color: rgb(255,65,54, 0.2);
   }
   100% {
-    background-color: rgba(0,31,63, 0.4);
+    background-color: rgba(0,31,63, 0.5);
   }
 }
 
@@ -315,7 +314,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* height: 100px; */
+  width: 525px;
   height: 150px;
   vertical-align: center;
   text-align: center;
@@ -324,6 +323,7 @@ body {
   background-size: cover;
   /* background: linear-gradient(#ba9964, #d8c7ab); */
   box-shadow: 3px 3px 12px;
+  margin: auto;
 }
 
 #p1_score_container {
@@ -492,8 +492,8 @@ body {
 */
 
 .intro {
-  max-width: 80%;
-  height: 500px;
+  width: 800px;
+  height: 386px;
   background: blue;
   display: flex;
   position: absolute;
@@ -511,9 +511,9 @@ body {
 
 .intro_overlay {
   position: absolute;
-  width: 100%;
-  height: 80%;
-  top: 10%;
+  width: 800px;
+  height: 320px;
+  /* top: 10%; */
   right: 0;
   left: 0;
   margin: auto;
@@ -535,12 +535,13 @@ body {
 
 
 .playerSelectDivider {
-  width: 40%;
-  height: 90%;
+  width: 600px;
+  height: 280px;
   padding: 20px;
   background-color: #98d3c5;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 #emojiselectarea, #gridselectarea {
@@ -548,6 +549,10 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+
+#gridselectarea {
+  justify-content: space-around;
 }
 
 .emoji_holder {
