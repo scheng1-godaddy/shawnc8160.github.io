@@ -11,6 +11,7 @@ const App =  {
   checkRowNum: 0,
   checkColNum: 0,
   checkCount: 0,
+  selectedEmojiIndex: 0,
   player1: {
     id: 'player1',
     name: 'Hangry',
@@ -26,6 +27,18 @@ const App =  {
     logo: '../images/Smiling_Devil_Emoji_small.png'
   },
   curPlayer: this.player1,
+  emoticons: [
+    {
+      name: 'Hangry',
+      color: 'red',
+      logo: 'images/Very_Angry_Emoji_small.png'
+    },
+    {
+      name: 'El Diablo',
+      color: 'purple',
+      logo: 'images/Smiling_Devil_Emoji_small.png'
+    }
+  ],
 
   // -----------------
   // Starts the current turn

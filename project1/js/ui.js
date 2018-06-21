@@ -174,11 +174,51 @@ const UI = {
   },
 
   // -----------------
-  // Create intro and settings
+  // Create Player selection screen
   // -----------------
-  createIntro: function () {
-    const $intro = $('<div>').addClass('intro').text('Intro');
+
+  createPlayerSelection: function(player) {
+    // Create the player selection screen
+    const $intro = $('<div>').addClass('intro');
+    const $p1Select = $('<div>').attr('id', 'p1select').addClass('intro_overlay').attr('player', player);
+    const $emojiSelectContainer = $('<div>').attr('class', 'playerSelectDivider').attr('player', player);
+    // const $playerInfoContainer = $('<div>').attr('class', 'playerSelectDivider');
+    const $sectionDivider = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
+    const $sectionDivider2 = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
+    const $sectionDivider3 = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
+    const $sectionDivider4 = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
+    $sectionDivider3.text("Enter your name: ");
+    $sectionDivider3.append($('<input>').attr('id', 'nameinput').attr('player', player).attr('player', player));
+    $sectionDivider4.append(
+      $('<button>')
+        .attr('id', 'player1done')
+        .addClass('button')
+        .addClass('button1')
+        .text('Done'))
+        .on('click', EventHandler.nameSubmitHandler)
+    $emojiSelectContainer.append($sectionDivider.attr('id', 'emojiselectheader'));
+    $emojiSelectContainer.append($sectionDivider2.attr('id', 'emojiselectarea'));
+    $emojiSelectContainer.append($sectionDivider3.attr('id', 'nameinputarea'));
+    $emojiSelectContainer.append($sectionDivider4.attr('id', 'buttonarea'));
+    $p1Select.append($emojiSelectContainer);
+    // $p1Select.append($playerInfoContainer);
+    $intro.append($p1Select);
     $('body').append($intro);
+
+    // Create the emoji selection area
+    $('#emojiselectheader').append($('<h2>').text(`Player ${player}, select your Emoji`));
+
+    for (let i = 0; i < App.emoticons.length; i++) {
+      let $emojiDiv = $('<div>').addClass('emoji_holder');
+      let $emjoiImg = $('<img>')
+        .addClass('emoji_thumbnail')
+        .attr('src', `${App.emoticons[i].logo}`)
+        .attr('index', `${i}`)
+        .on('click', EventHandler.emojiSelectHandler);
+      $emojiDiv.append($emjoiImg);
+      $('#emojiselectarea').append($emojiDiv);
+    }
+
   }
 
 }

@@ -29,6 +29,7 @@ body {
   background: url('../images/forest.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Bangers', cursive;
 }
 
 /*
@@ -491,11 +492,122 @@ body {
 */
 
 .intro {
-  with: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
+  max-width: 80%;
+  height: 500px;
   background: blue;
   display: flex;
-  box-sizing: border-box;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  background-image: url('../images/Beautiful_landscape_background.png');
+  background-size: cover;
+}
+
+.intro_overlay {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 10%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 255, 255, .8);
+  animation: introOverlay 1s 1;
+}
+
+@keyframes introOverlay {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+.playerSelectDivider {
+  width: 40%;
+  height: 90%;
+  padding: 20px;
+  background-color: #98d3c5;
+  display: flex;
+  flex-direction: column;
+}
+
+#emojiselectarea {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.emoji_holder {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.emoji_thumbnail {
+  width: 50px;
+  height: 50px;
+  transition: transform 1s;
+}
+
+.emoji_thumbnail_selected {
+  width: 50px;
+  height: 50px;
+  background-color: #cecca5;
+  transform: scale(1.3);
+}
+
+.emoji_thumbnail:hover {
+  background-color: #cecca5;
+  transform: scale(1.3);
+}
+
+#nameinputarea {
+  /* border: 1px solid gold; */
+  padding: 20px;
+  height: 50px;
+  margin-top: 15px;
+  background: #a8a76d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  animation: displayName 1s 1;
+}
+
+@keyframes displayName {
+  0% {
+    height: 0;
+    background: #e2e2b3;
+  }
+  100% {
+    height: 50px;
+    background: #a8a76d;
+  }
+}
+
+#nameinput {
+  width: 150px;
+  margin-left: 20px;
+}
+
+#buttonarea {
+  display: none;
+  justify-content: flex-end;
 }

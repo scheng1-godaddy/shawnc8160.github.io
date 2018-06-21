@@ -33,5 +33,44 @@ const EventHandler = {
       });
 
     }
+  },
+
+  emojiSelectHandler: function(event) {
+    let $currentEmoji = $(event.currentTarget);
+    $('.emoji_thumbnail_selected').removeClass('emoji_thumbnail_selected');
+    $currentEmoji.addClass('emoji_thumbnail_selected');
+    // Get the emoji object from the Array
+    App.selectedEmojiIndex = Number($currentEmoji.attr('index'));
+    //Display input name area now
+    $('#nameinputarea').css('display', 'block');
+    $('#nameinput').val(App.emoticons[App.selectedEmojiIndex].name)
+    $('#buttonarea').css('display', 'flex');
+  },
+
+  nameSubmitHandler: function(event) {
+    console.log($(event.currentTarget));
+    // Check which player it is and grab the correct object
+    let playerNum = $(event.currentTarget).attr('player');
+    // Place emoji info into players object
+    let emoji = App.emoticons[App.selectedEmojiIndex]
+    App['player'+playerNum].name = $('#nameinput').val();
+    App['player'+playerNum].color = emoji.color;
+    App['player'+playerNum].logo = emoji.logo;
+
+    // Remove emoji from Array
+    App.emoticons.splice(App.selectedEmojiIndex, 1);
+
+    // Move onto next player if not already player 2
+    // If player 2, go to board choice window.
+    if (playerNum == 1) {
+      let $saveDiv = $('#container').detach();
+      $('body').empty().append($saveDiv);
+      UI.createPlayerSelection(2);
+    } else {
+      // Launch grid chooser
+      console.log(App.player1);
+      console.log(App.player2);
+    }
+
   }
 }
