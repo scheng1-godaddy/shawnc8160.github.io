@@ -5,7 +5,7 @@
 const EventHandler = {
 
   // -----------------
-  // UI Properties
+  // Handler for chips drag and drop
   // -----------------
   inputHandler: function (event, ui) {
     // Get the input column
@@ -35,6 +35,9 @@ const EventHandler = {
     }
   },
 
+  // -----------------
+  // Handler for Emoji selection
+  // -----------------
   emojiSelectHandler: function(event) {
     let $currentEmoji = $(event.currentTarget);
     $('.emoji_thumbnail_selected').removeClass('emoji_thumbnail_selected');
@@ -47,6 +50,9 @@ const EventHandler = {
     $('#buttonarea').css('display', 'flex');
   },
 
+  // -----------------
+  // Handler for the submit button in player emoticon selection screens
+  // -----------------
   nameSubmitHandler: function(event) {
     console.log($(event.currentTarget));
     // Check which player it is and grab the correct object
@@ -60,17 +66,34 @@ const EventHandler = {
     // Remove emoji from Array
     App.emoticons.splice(App.selectedEmojiIndex, 1);
 
+    // Clear the current visible elements on screen (except background)
+    let $saveDiv = $('#container').detach();
+    $('body').empty().append($saveDiv);
     // Move onto next player if not already player 2
     // If player 2, go to board choice window.
     if (playerNum == 1) {
-      let $saveDiv = $('#container').detach();
-      $('body').empty().append($saveDiv);
+      // Display selection screen for player 2
       UI.createPlayerSelection(2);
     } else {
       // Launch grid chooser
       console.log(App.player1);
       console.log(App.player2);
+      UI.createGridSelection();
     }
+  },
 
-  }
+  // -----------------
+  // Handler for grid selection
+  // -----------------
+  gridSelectHandler: function(event) {
+    let $currentGrid = $(event.currentTarget);
+    $('.grid_holder_selected').removeClass('grid_holder_selected');
+    $currentGrid.addClass('grid_holder_selected');
+    // Store the grid size
+    let rowSize = $currentGrid.attr('rowsize');
+    let colSize = $currentGrid.attr('colsize');
+    console.log(`row size is ${rowSize} column size is ${colSize}`);
+    UI.rowNum = Number(rowSize);
+    UI.colNum = Number(colSize);
+  },
 }

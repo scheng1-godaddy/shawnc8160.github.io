@@ -176,13 +176,11 @@ const UI = {
   // -----------------
   // Create Player selection screen
   // -----------------
-
   createPlayerSelection: function(player) {
     // Create the player selection screen
     const $intro = $('<div>').addClass('intro');
     const $p1Select = $('<div>').attr('id', 'p1select').addClass('intro_overlay').attr('player', player);
     const $emojiSelectContainer = $('<div>').attr('class', 'playerSelectDivider').attr('player', player);
-    // const $playerInfoContainer = $('<div>').attr('class', 'playerSelectDivider');
     const $sectionDivider = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
     const $sectionDivider2 = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
     const $sectionDivider3 = $('<div>').attr('class', 'playerSelectSection').attr('player', player);
@@ -201,13 +199,11 @@ const UI = {
     $emojiSelectContainer.append($sectionDivider3.attr('id', 'nameinputarea'));
     $emojiSelectContainer.append($sectionDivider4.attr('id', 'buttonarea'));
     $p1Select.append($emojiSelectContainer);
-    // $p1Select.append($playerInfoContainer);
     $intro.append($p1Select);
     $('body').append($intro);
 
     // Create the emoji selection area
     $('#emojiselectheader').append($('<h2>').text(`Player ${player}, select your Emoji`));
-
     for (let i = 0; i < App.emoticons.length; i++) {
       let $emojiDiv = $('<div>').addClass('emoji_holder');
       let $emjoiImg = $('<img>')
@@ -218,7 +214,52 @@ const UI = {
       $emojiDiv.append($emjoiImg);
       $('#emojiselectarea').append($emojiDiv);
     }
+  }, // Close createPlayerSelection
+
+  // -----------------
+  // Create Player selection screen
+  // -----------------
+  createGridSelection: function(player) {
+    const $intro = $('<div>').addClass('intro');
+    const $gridSelect = $('<div>').attr('id', 'gridSelect').addClass('intro_overlay');
+    const $gridSelectContainer = $('<div>').attr('class', 'playerSelectDivider');
+    const $sectionDivider = $('<div>').attr('class', 'playerSelectSection');
+    const $sectionDivider2 = $('<div>').attr('class', 'playerSelectSection');
+    const $sectionDivider3 = $('<div>').attr('class', 'playerSelectSection');
+    $sectionDivider3.append(
+      $('<button>')
+        .attr('id', 'griddone')
+        .addClass('button')
+        .addClass('button1')
+        .text('Done'))
+        .on('click', EventHandler.nameSubmitHandler)
+
+    $gridSelectContainer.append($sectionDivider.attr('id', 'gridselectheader'));
+    $gridSelectContainer.append($sectionDivider2.attr('id', 'gridselectarea'));
+    $gridSelectContainer.append($sectionDivider3.attr('id', 'gridbuttonarea'));
+    $gridSelect.append($gridSelectContainer);
+    $intro.append($gridSelect);
+    $('body').append($intro);
+
+    $('#gridselectheader').append($('<h2>').text(`Select your grid size`));
+
+    let $gridDiv1 = $('<div>').addClass('grid_holder').attr('id', 'gridstandard').attr('rowsize', '6').attr('colsize', '7').on('click', EventHandler.gridSelectHandler);
+    let $gridDiv2 = $('<div>').addClass('grid_holder').attr('id', 'gridlarge').attr('rowsize', '9').attr('colsize', '10').on('click', EventHandler.gridSelectHandler);
+    let $gridDiv3 = $('<div>').addClass('grid_holder').attr('id', 'gridxlarge').attr('rowsize', '12').attr('colsize', '13').on('click', EventHandler.gridSelectHandler);
+
+    $gridDiv1.append($('<img>').attr('src', 'images/grid_grey.png'));
+    $gridDiv1.append($('<p>').text('Regular (6x7)'));
+
+    $gridDiv2.append($('<img>').attr('src', 'images/grid_grey.png'));
+    $gridDiv2.append($('<p>').text('Large (9x10)'));
+
+    $gridDiv3.append($('<img>').attr('src', 'images/grid_grey.png'));
+    $gridDiv3.append($('<p>').text('X-Large (12x13)'));
+
+    $('#gridselectarea').append($gridDiv1);
+    $('#gridselectarea').append($gridDiv2);
+    $('#gridselectarea').append($gridDiv3);
 
   }
 
-}
+} // Close UI object

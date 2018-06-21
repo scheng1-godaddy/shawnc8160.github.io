@@ -543,7 +543,7 @@ body {
   flex-direction: column;
 }
 
-#emojiselectarea {
+#emojiselectarea, #gridselectarea {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -581,7 +581,7 @@ body {
 #nameinputarea {
   /* border: 1px solid gold; */
   padding: 20px;
-  height: 50px;
+  height: 30px;
   margin-top: 15px;
   background: #a8a76d;
   display: flex;
@@ -597,7 +597,7 @@ body {
     background: #e2e2b3;
   }
   100% {
-    height: 50px;
+    height: 30px;
     background: #a8a76d;
   }
 }
@@ -610,4 +610,42 @@ body {
 #buttonarea {
   display: none;
   justify-content: flex-end;
+}
+
+#gridbuttonarea {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.grid_holder {
+  width: 115px;
+  height: 115px;
+  margin: 15px;
+  padding-top: 15px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  transition: background-color 1s, color 1s;
+  color: orange;
+}
+
+.grid_holder img {
+  width: 60px;
+  height: 60px;
+}
+
+.grid_holder:hover{
+  color: brown;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.grid_holder_selected{
+  color: brown;
+  background-color: rgba(255, 255, 255, 1);
 }
