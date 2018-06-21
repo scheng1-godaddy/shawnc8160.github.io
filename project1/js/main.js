@@ -6,6 +6,13 @@
 // On ready
 // -----------------
 $(() => {
+
+  // UI.createIntro();
+
+  $('#container').empty();
+  UI.createStructure();
+
+  // Start Game stuff
   // Create the input area
   UI.createInputArea();
   // Create the board first

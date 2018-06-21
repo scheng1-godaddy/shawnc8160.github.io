@@ -103,5 +103,82 @@ const UI = {
       console.log("Restarting game");
       App.restartGame();
     });
+  },
+
+  // -----------------
+  // Create body structure
+  // -----------------
+  createStructure: function () {
+
+    const $mainContainer = $('<div>').attr('id', 'main_container');
+    $('#container').append($mainContainer);
+
+    const $leftsideContainer = $('<div>').attr('id', 'leftside_container');
+    const $rightsideContainer = $('<div>').attr('id', 'rightside_container');
+    const $centerContainer = $('<div>').attr('id', 'center_container');
+    $('#main_container').append($leftsideContainer);
+    $('#main_container').append($centerContainer);
+    $('#main_container').append($rightsideContainer);
+
+    const $leftMenuContainer = $('<div>').attr('id', 'left_menu_container').addClass('menu');
+    const $player1Container = $('<div>').attr('id', 'player1_container');
+    $('#leftside_container').append($leftMenuContainer);
+    $('#leftside_container').append($player1Container);
+
+    const $player2Container = $('<div>').attr('id', 'player2_container');
+    $('#rightside_container').append($player2Container);
+
+    const $leftMenuIcon = $('<div>').attr('id', 'left_menu_icon');
+    const $leftMenuText = $('<div>').attr('id', 'left_menu_text').text("Restart Game");
+    $('#left_menu_container').append($leftMenuIcon);
+    $('#left_menu_container').append($leftMenuText);
+
+    const $scoreContainer = $('<div>').attr('id', 'score_container');
+    $('#center_container').append($scoreContainer);
+
+    const $p1ScoreContainer = $('<div>').attr('id', 'p1_score_container');
+    $('#score_container').append($p1ScoreContainer);
+
+    const $p1Score = $('<div>').attr('id', 'p1_score');
+    const $p1Logo =  $('<div>').attr('id', 'p1_logo');
+    $('#p1_score_container').append($p1Score);
+    $('#p1_score_container').append($p1Logo);
+
+    const $scoreCenterContainer = $('<div>').attr('id', 'score_center_container');
+    $scoreCenterContainer.append($('<p>').attr('id', 'score_center').text('VS'));
+    $('#score_container').append($scoreCenterContainer);
+
+    const $p2ScoreContainer = $('<div>').attr('id', 'p2_score_container');
+    $('#score_container').append($p2ScoreContainer);
+
+    const $p2Score = $('<div>').attr('id', 'p2_score');
+    const $p2Logo =  $('<div>').attr('id', 'p2_logo');
+    $('#p2_score_container').append($p2Logo);
+    $('#p2_score_container').append($p2Score);
+
+    const $inputContainer = $('<div>').attr('id', 'input_container');
+    $inputContainer.append($('<div>').attr('id', 'message_prompt'));
+    $('#center_container').append($inputContainer);
+
+    const $boardContainer = $('<div>').attr('id', 'board_container');
+    $boardContainer.append($('<div>').attr('id', 'board_cover_container'))
+    $('#center_container').append($boardContainer);
+
+    const $controlsContainer = $('<div>').attr('id', 'controls_container');
+    $controlsContainer.append($('<p>').text('Do you want to play again?'));
+    $controlsContainer.append($('<button>').attr('id', 'restart_yes').addClass('button').addClass('button1').text('Yes'));
+    $controlsContainer.append($('<button>').attr('id', 'restart_no').addClass('button').addClass('button1').text('No'));
+    $('#center_container').append($controlsContainer);
+
+
+  },
+
+  // -----------------
+  // Create intro and settings
+  // -----------------
+  createIntro: function () {
+    const $intro = $('<div>').addClass('intro').text('Intro');
+    $('body').append($intro);
   }
+
 }
