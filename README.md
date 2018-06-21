@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/shawnc8160/shawnc8160.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+#Project 1 - Connect 4
+For GA WDI Project 1, I created a connect 4 game
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Technologies
+HTML, CSS, JS with Jquery library (along with the jquery UI package for draggable method)
 
-### Markdown
+## Link to the game:
+[Link](https://shawnc8160.github.io/project1/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Installation Instructions
+Only tested with Chrome, so use that. 
 
-```markdown
-Syntax highlighted code block
+## Instructions
+Choose the emoticon you want, choose the grid size, then start the game. 
 
-# Header 1
-## Header 2
-### Header 3
+Players must drag the chip above the board to drop into columns. Connect 4 chips in a row (with the same color) to win the game. You can connect horizontally, vertically and diagonally. There's a button to reset the board. 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shawnc8160/shawnc8160.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Unsolved issues
+Will come back to this after further testing 
