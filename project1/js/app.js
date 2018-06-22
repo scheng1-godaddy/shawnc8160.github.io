@@ -37,6 +37,16 @@ const App =  {
       name: 'El Diablo',
       color: 'purple',
       logo: 'images/Smiling_Devil_Emoji_small.png'
+    },
+    {
+      name: 'Koala',
+      color: 'blue',
+      logo: 'images/koala_emoji_icon_small.png'
+    },
+    {
+      name: 'Stinky',
+      color: 'brown',
+      logo: 'images/Poop_Emoji_small.png'
     }
   ],
   emoticons: [],

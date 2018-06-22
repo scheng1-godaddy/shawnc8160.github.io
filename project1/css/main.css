@@ -75,7 +75,6 @@ body {
 
 #rightside_container {
   justify-content: flex-start;
-  padding-left: 20px;
 }
 
 #leftside_container {
@@ -85,14 +84,18 @@ body {
 #player1_container, #player2_container {
   width: 100px;
 }
+#player2_container {
+  padding-left: 20px;
+}
 
 .menu {
   width: 150px;
-  height: 100px;
+  height: 180px;
   position: absolute;
   /* border: 1px solid black; */
   top: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   /* background-image: url('../images/recycling.png');
@@ -111,18 +114,20 @@ body {
 
 #left_menu_text {
   position: absolute;
+  bottom: 5px;
+  /* position: absolute;
   height: 30px;
-  top: 45px;
+  top: 45px; */
+  font-size: 16px;
   padding: 10px 10px;
   /* border: 1px solid gold; */
   background: #1a601c;
   color: white;
-  border-bottom-left-radius: 90px;
-  border-bottom-right-radius: 90px;
+  /* border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px; */
   animation: restart_text 1s 1;
   display: none;
 }
-
 
 
 #left_menu_icon {
@@ -136,6 +141,48 @@ body {
 }
 
 #left_menu_icon:hover~#left_menu_text {
+  display: block;
+}
+
+
+#right_menu_icon {
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/hand-gesture-color.png');
+  background-size: cover;
+  cursor: pointer;
+  /* border: 1px solid green; */
+}
+
+#right_menu_text {
+  /* position: absolute; */
+  /* height: 30px; */
+  /* top: 45px; */
+  position: absolute;
+  bottom: 5px;
+  font-size: 16px;
+  padding: 10px 10px;
+  /* border: 1px solid gold; */
+  background: #1a601c;
+  color: white;
+  /* border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px; */
+  animation: restart_text 1s 1;
+  display: none;
+}
+
+
+#right_menu_icon {
+  animation: restart-stop 1s 1;
+  background-image: url('../images/hand-gesture-color.png');
+}
+
+#right_menu_icon:hover {
+  animation: restarthover-stop 1s 1;
+  background-image: url('../images/hand-gesture.png');
+}
+
+#right_menu_icon:hover~#right_menu_text {
   display: block;
 }
 
@@ -155,6 +202,26 @@ body {
   }
   100% {
     background-image: url('../images/recycling_color.png');
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes restart-stop {
+  0% {
+    background-image: url('../images/hand-gesture.png');
+  }
+  100% {
+    background-image: url('../images/hand-gesture-color.png');
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes restarthover-stop {
+  0% {
+    background-image: url('../images/hand-gesture-color.png');
+  }
+  100% {
+    background-image: url('../images/hand-gesture.png');
     transform: rotate(360deg);
   }
 }
@@ -250,7 +317,6 @@ body {
 .red {
   width: 75px;
   height: 75px;
-  /* background-color: red; */
   display: block;
   background-image: url('../images/Very_Angry_Emoji_small.png');
   background-size: cover;
@@ -260,8 +326,7 @@ body {
   width: 75px;
   height: 75px;
   display: block;
-  /* background-color: blue; */
-  background-image: url('../images/Smiling_Devil_Emoji_small.png');
+  background-image: url('../images/koala_emoji_icon_small.png');
   background-size: cover;
 }
 
@@ -269,8 +334,15 @@ body {
   width: 75px;
   height: 75px;
   display: block;
-  /* background-color: blue; */
   background-image: url('../images/Smiling_Devil_Emoji_small.png');
+  background-size: cover;
+}
+
+.brown {
+  width: 75px;
+  height: 75px;
+  display: block;
+  background-image: url('../images/Poop_Emoji_small.png');
   background-size: cover;
 }
 
@@ -654,3 +726,81 @@ body {
   color: brown;
   background-color: rgba(255, 255, 255, 1);
 }
+
+
+
+/* Preloader stuff */
+/* .loader, .loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+.loader {
+    margin: 60px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid #ffffff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+#loadingDiv {
+    position:absolute;;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000;
+} */
+
+/* #loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */

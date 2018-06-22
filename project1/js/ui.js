@@ -103,6 +103,11 @@ const UI = {
       console.log("Restarting game");
       App.restartGame();
     });
+
+    $('#right_menu_icon').on('click', () => {
+      console.log("Resetting game");
+      App.resetGame();
+    });
   },
 
   // -----------------
@@ -125,13 +130,20 @@ const UI = {
     $('#leftside_container').append($leftMenuContainer);
     $('#leftside_container').append($player1Container);
 
+    const $rightMenuContainer = $('<div>').attr('id', 'right_menu_container').addClass('menu');
     const $player2Container = $('<div>').attr('id', 'player2_container');
+    $('#rightside_container').append($rightMenuContainer);
     $('#rightside_container').append($player2Container);
 
     const $leftMenuIcon = $('<div>').attr('id', 'left_menu_icon');
     const $leftMenuText = $('<div>').attr('id', 'left_menu_text').text("Restart Game");
     $('#left_menu_container').append($leftMenuIcon);
     $('#left_menu_container').append($leftMenuText);
+
+    const $rightMenuIcon = $('<div>').attr('id', 'right_menu_icon');
+    const $rightMenuText = $('<div>').attr('id', 'right_menu_text').text("Stop Game");
+    $('#right_menu_container').append($rightMenuIcon);
+    $('#right_menu_container').append($rightMenuText);
 
     const $scoreContainer = $('<div>').attr('id', 'score_container');
     $('#center_container').append($scoreContainer);
@@ -141,6 +153,7 @@ const UI = {
 
     const $p1Score = $('<div>').attr('id', 'p1_score');
     const $p1Logo =  $('<div>').attr('id', 'p1_logo');
+    $p1Logo.css('background-image', `url('${App.player1.logo}')`);
     $('#p1_score_container').append($p1Score);
     $('#p1_score_container').append($p1Logo);
 
@@ -153,6 +166,7 @@ const UI = {
 
     const $p2Score = $('<div>').attr('id', 'p2_score');
     const $p2Logo =  $('<div>').attr('id', 'p2_logo');
+    $p2Logo.css('background-image', `url('${App.player2.logo}')`);
     $('#p2_score_container').append($p2Logo);
     $('#p2_score_container').append($p2Score);
 
