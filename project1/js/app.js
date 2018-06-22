@@ -45,17 +45,15 @@ const App =  {
   // Starts the current turn
   // -----------------
   startTurn: function() {
-    console.log("Starting new turn, App value is: ", App);
     // Swaps player
     App.curPlayer = (App.curPlayer === App.player1) ? App.player2 : App.player1;
     // Display message for whose turn
     // $('#message_prompt').text(`${App.curPlayer.name} turn`).css('color', App.curPlayer.color);
     // Create new chip (div), make it draggable and able to snap into the input area
     $newChip = $('<div>').addClass(App.curPlayer.color).addClass('newchip').addClass(App.curPlayer.id).draggable({ snap: ".ui-droppable", revert: true });
-    console.log("Created new chip", $newChip);
+    // console.log("Created new chip", $newChip);
     // Append new chip to the correct side bar
     $(`#${App.curPlayer.id}_container`).append($newChip);
-    console.log("Start turn, check count is", App.checkCount);
   },
 
   // -----------------
@@ -64,6 +62,7 @@ const App =  {
   endTurn: function($cell) {
     // Keep count of how many turns (maybe for future use)
     App.gameCount++;
+    console.log("Turn counter is", App.gameCount);
 
     // Check if there's a winner
     App.winCheck($cell);
@@ -76,7 +75,6 @@ const App =  {
   // Evaluates if there's a winner
   // -----------------
   winEval: function() {
-    console.log(`Check count is: ${App.checkCount}`);
     // Check if we have a winner?
     if (App.checkCount >= App.winAmount) {
       //We have a winner, prompt the user
@@ -87,6 +85,12 @@ const App =  {
       // Reset the game and take score
       App.curPlayer.score++;
       UI.updateScore();
+      return true;
+    } else if (App.gameCount == (UI.rowNum * UI.colNum)){
+      // Condition for draw
+      $('#message_prompt').text(`Draw! Game ended`)
+      $('#message_prompt').css('background-color', `${App.curPlayer.color}`);
+      $('#message_prompt').css('display', 'flex');
       return true;
     } else {
       App.checkCount = 0;
@@ -154,7 +158,7 @@ const App =  {
     // What's the current cell's position
     App.checkRowNum = Number($cell.attr('rownum'));
     App.checkColNum = Number($cell.attr('colnum'));
-    console.log(`Checking horizontal for row: ${App.checkRowNum}, col: ${App.checkColNum}`);
+    // console.log(`Checking horizontal for row: ${App.checkRowNum}, col: ${App.checkColNum}`);
 
     // Check for the next cell (App is dependent on what was passed)
     let rowNum = App.checkRowNum+row;
@@ -175,7 +179,7 @@ const App =  {
       // Check if the cell matches
       // console.log($nextCell.hasClass(`${App.curPlayer}`));
       if ($nextCell.hasClass(`${App.curPlayer.color}`)) {
-        console.log('Found match');
+        // console.log('Found match');
         // If it does, increment checkCount
         App.checkCount++;
 
@@ -212,7 +216,7 @@ const App =  {
     // Reset check count
     // App.checkCount = 0;
     App.checkCount = 0;
-    console.log("Restart game, App check count is: ", App.checkCount);
+    App.gameCount = 0;
     App.startTurn();
 
   },
@@ -228,6 +232,7 @@ const App =  {
     App.selectedEmojiIndex = 0;
     App.player1.score = 0;
     App.player2.score = 0;
+    App.gameCount = 0;
 
     App.emoticons = App.emoticonsMaster.slice();
 
