@@ -58,7 +58,6 @@ const App =  {
     // Swaps player
     App.curPlayer = (App.curPlayer === App.player1) ? App.player2 : App.player1;
     // Display message for whose turn
-    // $('#message_prompt').text(`${App.curPlayer.name} turn`).css('color', App.curPlayer.color);
     // Create new chip (div), make it draggable and able to snap into the input area
     $newChip = $('<div>').addClass(App.curPlayer.color).addClass('newchip').addClass(App.curPlayer.id).draggable({ snap: ".ui-droppable", revert: true });
     // console.log("Created new chip", $newChip);
