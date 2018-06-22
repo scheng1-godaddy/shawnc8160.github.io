@@ -614,6 +614,19 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  animation: selectFadeIn 2s 1;
+}
+
+@keyframes selectFadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #emojiselectarea, #gridselectarea {
