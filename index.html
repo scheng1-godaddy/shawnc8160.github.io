@@ -6,35 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
-  <header class="header">
-    <h1 class="logo">Shawn Cheng</h1>
-    <nav class="main_nav">
-      <ul>
-        <li>My Work</li>
-        <li>About Me</li>
-        <li>Resume</li>
-        <li>Contact Me</li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <nav class="sub_nav">
-      <ul>
-        <li>Web</li>
-        <li>Mobile</li>
-        <li>Desktop</li>
-      </ul>
-    </nav>
-    <section class="project_container">
-      <h2> Project Name </h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure voluptates illo vero magnam blanditiis. Quidem commodi repudiandae laborum, modi dolorum fuga quisquam reprehenderit, incidunt quos dignissimos vitae. Illum, iusto, ex. </p>
-      <img src="http://via.placeholder.com/350x350"/>
-      <a href="#">See Site</a>
-      <a href="#">See Code</a>
-    </section>
-  </main>
+
+  <div class="container">
+
+    <header class="header">
+      <nav class="social-container">
+        <i class="fab fa-linkedin social"></i>
+        <i class="fab fa-github social"></i>
+      </nav>
+    </header>
+
+
+    <main class="main-container"> <!-- Holds the entire content section -->
+      <!--
+      Start Profile Section
+      -->
+      <section class="section-container"> <!-- Holds the entire section (Profile) -->
+        <div class="section-nav"> <!-- Holds section nav bar/title -->
+          <div class="section-nav-title">
+            <span>Profile</span>
+            <div class="section-nav-icon-container">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+        </div>
+        <div class="section-content"><!-- Holds section content -->
+          <img src="https://via.placeholder.com/100x100" alt="Shawn Cheng">
+          <h1> Shawn Cheng </h1>
+          <h3> Full Stack Developer </h3>
+        </div>
+        <div class="section-content"><!-- Holds section content -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
+    </main>
+
+  </div> <!-- container close -->
 </body>
+<!-- Using jquery! -->
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
