@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 /*
 =======================================
   Body Styling
 =======================================
 */
+
+* {
+  border: 1px solid gold;
+}
+
 body, html {
   padding: 0;
   margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: rgb(135, 135, 135);
+  font-size: .8em;
+}
+
+h1 {
+  font-size: 3em;
 }
 
 body {
@@ -14,11 +28,24 @@ body {
 
 /*
 =======================================
+  Shared
+=======================================
+*/
+.white {
+  color: white;
+}
+
+.blue {
+  color: #29ACCC;
+}
+
+/*
+=======================================
   Container
 =======================================
 */
 .container {
-  width: 900px;
+  width: 800px;
   margin: auto;
   padding-top: 50px;
 }
@@ -61,8 +88,15 @@ body {
 }
 
 .section-content {
-  padding: 30px;
+  padding: 2em;
+  box-sizing: border-box;
 }
+
+.section-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /*-------------------------------------
   Section Nav
@@ -84,4 +118,46 @@ body {
   background: #29ACCC;
   left: -64px;
   top: 0;
+}
+
+/*-------------------------------------
+  Section Header
+--------------------------------------*/
+.section-header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 2em;
+}
+
+/*-------------------------------------
+  About Section
+--------------------------------------*/
+.portrait, .title, .about-contact-container {
+  margin-right: 4em;
+}
+
+.portrait {
+  width: 110px;
+  height: 110px;
+}
+
+.title h1, h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.title h2 {
+  font-size: 1.5em;
+  padding-top: .2em
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.section-content-container > .section-content {
+  padding-top: 0;
 }
