@@ -1,5 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+:root {
+  --black: rgb(20,20,20);
+  --grey: rgb(135, 135, 135);
+  --lightgrey:rgb(200, 200, 200);
+  --medgrey:rgb(55, 55, 55);
+  --darkgrey: rgb(40,40,40);
+  --white: white;
+  --blue: #29ACCC;
+  --orange: #F76731;
+  --green: #52D423;
+  --yellow: #FFED2B;
+  --pink: #FF11AE;
+}
+
+/*
+=======================================
+  Shared
+=======================================
+*/
+.darkgrey-back {
+  background-color: var(--darkgrey);
+}
+
+.medgrey-back {
+  background-color: var(--medgrey);
+}
+
+.white-back {
+  background-color: var(--white);
+}
+
+.blue-back {
+  background-color: var(--blue);
+}
+
+.green-back {
+  background-color: var(--green);
+}
+
+.pink-back {
+  background-color: var(--pink);
+}
+
+.lightgrey-font {
+  color: var(--lightgrey)
+}
+
+.white-font {
+  color: var(--white);
+}
+
+.blue-font {
+  color: var(--blue);
+}
+
+.green-font {
+  color: var(--green);
+}
+
+.block {
+  display: block;
+}
 /*
 =======================================
   Body Styling
@@ -14,7 +76,7 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
-  color: rgb(135, 135, 135);
+  color: var(--grey);
   font-size: .8em;
 }
 
@@ -23,21 +85,9 @@ h1 {
 }
 
 body {
-  background: rgb(20,20,20);
+  background: var(--black);
 }
 
-/*
-=======================================
-  Shared
-=======================================
-*/
-.white {
-  color: white;
-}
-
-.blue {
-  color: #29ACCC;
-}
 
 /*
 =======================================
@@ -62,7 +112,6 @@ body {
 }
 
 .social {
-  color:white;
   padding-left: 15px;
   font-size: 2em;
 }
@@ -84,7 +133,7 @@ body {
   Section Containers
 --------------------------------------*/
 .section-container {
-  background: rgb(40,40,40);
+  border-bottom: 1px dotted var(--grey);
 }
 
 .section-content {
@@ -109,18 +158,16 @@ body {
   padding: 15px;
   width: 100px;
   height: 31px;
-  color: white;
   font-size: 1.6em;
   font-weight: bold;
-  background: #29ACCC;
   position: relative;
 }
 
 .section-nav-icon-container {
   position: absolute;
+  width: 30px;
   padding: 17px;
   font-size: 22px;
-  background: #29ACCC;
   left: -55px;
   top: 0;
 }
@@ -152,8 +199,8 @@ body {
 }
 
 .portrait {
-  width: 110px;
-  height: 110px;
+  min-width: 110px;
+  min-height: 110px;
 }
 
 .title h1, h2 {
@@ -182,7 +229,71 @@ body {
 
 .table-key {
   padding: 5px;
-  color: white;
   font-weight: 700;
   text-align: right;
+}
+
+/*-------------------------------------
+  Resume Section
+--------------------------------------*/
+.resume-container{
+  display: flex;
+  padding: 2em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resume-content-container {
+  width: 70%;
+}
+
+.resume-skills-container {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-header {
+  width: 100%;
+  padding: .4em;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+.resume-titles {
+  padding: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.resume-history-title {
+  position: relative;
+  width: 100%;
+}
+
+.resume-history-title-icon {
+  padding: .5em;
+  font-size: 1.3em;
+}
+
+.resume-history-title-container {
+  display: flex;
+  margin-top: 1em;
+}
+
+.resume-history-work-duration {
+  font-size: 1.3em;
+  position: absolute;
+  right: 1px;
+  top: 0;
+}
+
+.resume-history-work-title {
+  font-size: 1.4em;
+}
+
+.resume-history-content {
+  padding: 1.4em 0;
+  border-bottom: 1px dotted var(--grey);
 }
