@@ -43,6 +43,10 @@
   background-color: var(--pink);
 }
 
+.orange-back {
+  background-color: var(--orange);
+}
+
 .grey-font {
   color: var(--grey);
 }
@@ -163,8 +167,8 @@ a:hover {
 
 .section-nav-title {
   padding: 15px;
-  width: 100px;
-  height: 31px;
+  width: 120px;
+  height: 29px;
   font-size: 1.6em;
   font-weight: bold;
   position: relative;
@@ -172,10 +176,10 @@ a:hover {
 
 .section-nav-icon-container {
   position: absolute;
-  width: 30px;
-  padding: 17px;
+  width: 22px;
+  padding: 16px;
   font-size: 22px;
-  left: -55px;
+  left: -54px;
   top: 0;
 }
 
@@ -347,6 +351,21 @@ a:hover {
   color: var(--green);
 }
 
+.skills-list-pink > li::before{
+  content: "›  ";
+  color: var(--pink);
+}
+
+.skills-list-orange > li::before{
+  content: "›  ";
+  color: var(--orange);
+}
+
+.skills-list-yellow > li::before{
+  content: "›  ";
+  color: var(--yellow);
+}
+
 .skill-column-orange {
   border-left: 3px solid var(--orange);
 }
@@ -365,4 +384,85 @@ a:hover {
 
 .skill-column-yellow{
   border-left: 3px solid var(--yellow);
+}
+
+
+/*-------------------------------------
+  Portfolio Section
+--------------------------------------*/
+.portfolio-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.portfolio-menu-container {
+  width: 147px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.portfolio-content-container {
+  margin-left: 147px;
+  width: 81%;
+  max-height: 600px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  padding: 2em;
+}
+
+.portfolio-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 470px;
+  margin-top: 2em;
+  padding-right: 10px;
+  padding-top: 6em;
+  border-right: 1px dotted var(--medgrey);
+}
+
+.portfolio-nav-item {
+  padding: 1em;
+}
+
+.portfolio-section {
+  border-bottom: 1px dotted var(--medgrey);
+  width: 100%;
+  height: 230px;
+  display: flex;
+}
+
+.portfoilio-section-image, .portfoilio-section-title {
+  height: 210px;
+}
+
+.portfoilio-section-image {
+  width: 44%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.portfoilio-section-image > img {
+  max-height: 180px;
+}
+
+.portfoilio-section-title {
+  width: 66%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.portfolio-section-tech, .portfolio-section-description, .portfolio-section-title, .portfolio-section-sitelink {
+  border-bottom: 1px solid var(--medgrey);
+  padding: .7em 0;
+}
+.portfolio-section-title {
+  padding-top: 0;
+  font-size: 2em;
+}
+.portfolio-section-tech {
+  color: var(--orange);
 }
