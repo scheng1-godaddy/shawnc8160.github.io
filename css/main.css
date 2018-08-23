@@ -43,6 +43,10 @@
   background-color: var(--pink);
 }
 
+.grey-font {
+  color: var(--grey);
+}
+
 .lightgrey-font {
   color: var(--lightgrey)
 }
@@ -88,6 +92,9 @@ body {
   background: var(--black);
 }
 
+a:hover {
+  color: var(--blue);
+}
 
 /*
 =======================================
@@ -199,8 +206,9 @@ body {
 }
 
 .portrait {
-  min-width: 110px;
-  min-height: 110px;
+  width: 110px;
+  height: 130px;
+  border: .5em solid var(--medgrey);
 }
 
 .title h1, h2 {
@@ -231,8 +239,13 @@ body {
   padding: 5px;
   font-weight: 700;
   text-align: right;
+  font-size: 1.2em;
 }
 
+.social-link {
+  color: var(--grey);
+  text-decoration: none;
+}
 /*-------------------------------------
   Resume Section
 --------------------------------------*/
@@ -244,14 +257,16 @@ body {
 }
 
 .resume-content-container {
-  width: 70%;
+  width: 60%;
 }
 
 .resume-skills-container {
-  width: 30%;
+  width: 40%;
+  padding-left: 2em;
+  flex-direction: column;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .resume-header {
@@ -296,4 +311,58 @@ body {
 .resume-history-content {
   padding: 1.4em 0;
   border-bottom: 1px dotted var(--grey);
+}
+
+.skills-table {
+  /* border-collapse:separate;
+  border-spacing:2em; */
+}
+
+.row-space {
+  height: 2em;
+}
+
+.table-key-skills {
+  font-weight: 600;
+  text-align: right;
+  font-size: 1em;
+  padding: 1.2em;
+  width: 8em;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 1.2em;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.skills-list-blue > li::before{
+  content: "›  ";
+  color: var(--blue);
+}
+
+.skills-list-green > li::before{
+  content: "›  ";
+  color: var(--green);
+}
+
+.skill-column-orange {
+  border-left: 3px solid var(--orange);
+}
+
+.skill-column-blue{
+  border-left: 3px solid var(--blue);
+}
+
+.skill-column-green{
+  border-left: 3px solid var(--green);
+}
+
+.skill-column-pink{
+  border-left: 3px solid var(--pink);
+}
+
+.skill-column-yellow{
+  border-left: 3px solid var(--yellow);
 }
