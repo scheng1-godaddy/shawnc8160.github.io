@@ -396,7 +396,7 @@ a:hover {
 --------------------------------------*/
 .portfolio-container {
   width: 100%;
-  height: 600px;
+  height: 700px;
   position: relative;
 }
 
@@ -411,7 +411,7 @@ a:hover {
 .portfolio-content-container {
   margin-left: 147px;
   width: 81%;
-  max-height: 600px;
+  max-height: 700px;
   box-sizing: border-box;
   overflow-y: scroll;
   padding: 2em;
