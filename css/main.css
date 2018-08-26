@@ -336,7 +336,7 @@ a:hover {
   top: 0;
 }
 
-.resume-history-work-title {
+.resume-history-work-title, .resume-history-education-title {
   font-size: 1.4em;
 }
 
@@ -502,6 +502,7 @@ a:hover {
   padding: .7em 0;
 }
 .portfolio-section-title {
+  border: 1px solid gold;
   padding-top: 0;
   font-size: 2em;
 }
@@ -513,6 +514,7 @@ a:hover {
 @media screen and (max-width: 960px) {
   .container {
     width: 650px;
+    padding-top: 30px;
   }
   .title h1 {
     font-size: 2.2em;
@@ -537,6 +539,7 @@ a:hover {
 @media screen and (max-width: 768px) {
   .container {
     width: 400px;
+    padding-top: 15px;
   }
   .title h1 {
     font-size: 2.2em;
@@ -579,11 +582,51 @@ a:hover {
     padding: 0;
     padding-top: .2em;
   }
+  .portfolio-container {
+    height: 600px;
+  }
   .portfolio-content-container {
     margin: auto;
     margin-top: 3.3em;
     width: 90%;
     padding: 0;
     max-height: 500px;
+  }
+  .portfoilio-section-image > img {
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 300px;
+    padding-top: 15px;
+  }
+  .portrait {
+    display: none;
+  }
+  .about-contact-container {
+    padding-top: 2em;
+    padding-left: 1em;
+  }
+  .resume-history-work-title {
+    max-width: 3em;
+  }
+  .table-key-skills {
+    width: 4em;
+  }
+  .portfolio-section {
+    flex-direction: column;
+    height: 400px;
+  }
+  .portfoilio-section-image, .portfoilio-section-title {
+    height: 150px;
+    width: 100%;
+  }
+  .portfoilio-section-image > img {
+    max-height: 190px;
+  }
+  .portfolio-section-title {
+    margin-top: 40px;
   }
 }
