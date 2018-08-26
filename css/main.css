@@ -268,7 +268,7 @@ a:hover {
   width: 100%;
   box-sizing: border-box;
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: ease-in;
 }
 
@@ -424,7 +424,7 @@ a:hover {
   position: relative;
   display:none;
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: ease-in;
 }
 
