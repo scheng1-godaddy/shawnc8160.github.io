@@ -502,7 +502,6 @@ a:hover {
   padding: .7em 0;
 }
 .portfolio-section-title {
-  border: 1px solid gold;
   padding-top: 0;
   font-size: 2em;
 }
@@ -628,5 +627,8 @@ a:hover {
   }
   .portfolio-section-title {
     margin-top: 40px;
+  }
+  .section-nav-icon-container {
+    display: none;
   }
 }
