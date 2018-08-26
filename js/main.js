@@ -14,6 +14,7 @@ $(() => {
 
   // Click handler to expand and contract resume section
   $('#portfolio-header').click((event) => {
+    console.log('Clicked');
     if ($('.portfolio-container').is( ":hidden" )) {
       $('.portfolio-container').slideDown( "slow" );
     } else {
