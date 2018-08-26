@@ -4,8 +4,9 @@ $(() => {
   // Click handler to expand and contract resume section
   $('#resume-header').click((event) => {
     if ($('.resume-container').is( ":hidden" )) {
-      $('.resume-container').slideDown( "slow" );
-      $('.resume-container').css('display', 'flex');
+      $('.resume-container').slideDown( "slow", () => {
+        $('.resume-container').css('display', 'flex');
+      } );
     } else {
       $('.resume-container').slideUp( "slow" );
     }
