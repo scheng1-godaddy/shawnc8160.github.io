@@ -279,6 +279,10 @@ a:hover {
     100% {opacity: 1;}
 }
 
+.resume-content {
+  margin: 2em 0;
+}
+
 .resume-content-container {
   width: 60%;
 }
@@ -295,8 +299,13 @@ a:hover {
 .resume-header {
   width: 100%;
   padding: .4em;
+  margin-top: 1em;
   font-size: 1.1em;
   box-sizing: border-box;
+}
+
+#education-header {
+  margin-top: 3em;
 }
 
 .resume-titles {
@@ -521,5 +530,60 @@ a:hover {
   }
   .portfoilio-section-image > img {
     max-height: 120px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 400px;
+  }
+  .title h1 {
+    font-size: 2.2em;
+    max-width: 50px;
+    border: 1px solid gold;
+  }
+  #profile-header {
+    flex-wrap: wrap;
+  }
+  .portrait, .title, .about-contact-container {
+    margin-right: 1em;
+  }
+  .about-contact-container {
+    padding-top: 2em;
+    padding-left: 5em;
+  }
+  .resume-container {
+    flex-wrap: wrap;
+  }
+  .resume-content-container {
+    width: 90%;
+  }
+  .resume-skills-container {
+    width: 90%;
+    padding: 0;
+  }
+  #tech-skills-header {
+    margin-top: 3em;
+  }
+  .portfolio-menu-container {
+    width: 100%;
+    height: 3.5em;
+    border-bottom: 1px dotted var(--medgrey);
+  }
+  .portfolio-nav {
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: .2em;
+  }
+  .portfolio-content-container {
+    margin: auto;
+    margin-top: 3.3em;
+    width: 90%;
+    padding: 0;
+    max-height: 500px;
   }
 }
