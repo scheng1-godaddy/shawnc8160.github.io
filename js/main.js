@@ -4,11 +4,11 @@ $(() => {
   // Click handler to expand and contract resume section
   $('#resume-header').click((event) => {
     if ($('.resume-container').is( ":hidden" )) {
-      $('.resume-container').slideDown( "slow", () => {
+      $('.resume-container').slideDown( "fast", () => {
         $('.resume-container').css('display', 'flex');
       } );
     } else {
-      $('.resume-container').slideUp( "slow" );
+      $('.resume-container').slideUp( "fast" );
     }
     event.stopImmediatePropagation();
   })
@@ -17,14 +17,17 @@ $(() => {
   $('#portfolio-header').click((event) => {
     console.log('Clicked');
     if ($('.portfolio-container').is( ":hidden" )) {
-      $('.portfolio-container').slideDown( "slow", () => {
+      $('.portfolio-container').slideDown( "fast", () => {
         $('.portfolio-container').css('display', 'flex');
       } );
     } else {
-      $('.portfolio-container').slideUp( "slow" );
+      $('.portfolio-container').slideUp( "fast" );
     }
     event.stopImmediatePropagation();
   })
+
+  $('.text').hover((event) => {$('.slide-details').slideDown( "fast" )}, (event) => {$('.slide-details').slideUp( "fast" )});
+
 
 })
 

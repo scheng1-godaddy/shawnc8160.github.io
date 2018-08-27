@@ -427,7 +427,6 @@ a:hover {
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  border: 1px solid orange;
 }
 
 .portfolio-content-container {
@@ -435,7 +434,6 @@ a:hover {
   max-height: 900px;
   box-sizing: border-box;
   padding: 1em;
-  border: 1px solid green;
 }
 
 /*-------------------------------------
@@ -454,6 +452,7 @@ a:hover {
 /* Hide the images by default */
 .mySlides {
     display: none;
+    cursor: pointer;
 }
 
 /* Next & previous buttons */
@@ -488,13 +487,42 @@ a:hover {
 
 /* Caption text */
 .text {
-  color: var(--darkgrey);
-  font-size: 2em;
-  padding: 8px 12px;
+  color: var(--white);
+  font-size: 1em;
+  padding-bottom: .3em;
   position: absolute;
-  bottom: 8px;
+  top: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   text-align: center;
+}
+
+.text > h2 {
+  background-color: var(--darkgrey);
+  padding: 10px;
+  max-width: 200px;
+  box-sizing: border-box;
+  transition: background-color 1s ease;
+}
+
+.text > ul {
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1em 0;
+  text-align: left;
+  list-style: none;
+  background: var(--medgrey);
+  padding-left: 2em;
+  max-width: 200px;
+  transition: background-color 1s ease;
+}
+
+.text li {
+  margin: 10px 0;
 }
 
 /* Number text (1/3 etc) */
@@ -503,7 +531,8 @@ a:hover {
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  top: -2.5em;
+  left: 0;
 }
 
 /* The dots/bullets/indicators */
@@ -520,6 +549,24 @@ a:hover {
 
 .active, .dot:hover {
   background-color: #717171;
+}
+
+/* Expand animation */
+.expand {
+  -webkit-animation-name: expand;
+  -webkit-animation-duration: 3s;
+  animation-name: expand;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes expand{
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes expand {
+  0%   { width: 0; }
+  100% { width: 100%; }
 }
 
 /* Fading animation */
