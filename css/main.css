@@ -420,106 +420,129 @@ a:hover {
 --------------------------------------*/
 .portfolio-container {
   width: 100%;
-  height: 700px;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
   position: relative;
-  display:none;
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-}
-
-.portfolio-menu-container {
-  width: 147px;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+  border: 1px solid orange;
 }
 
 .portfolio-content-container {
-  margin-left: 147px;
-  width: 81%;
-  max-height: 700px;
+  width: 90%;
+  max-height: 900px;
   box-sizing: border-box;
-  overflow-y: scroll;
-  padding: 2em;
-}
-
-.portfolio-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 470px;
-  margin-top: 2em;
-  padding-right: 10px;
-  padding-top: 6em;
-  border-right: 1px dotted var(--medgrey);
-}
-
-.portfolio-nav-item {
   padding: 1em;
+  border: 1px solid green;
 }
 
-.portfolio-nav-item > a {
-  text-decoration: none;
-  color: var(--grey);
+/*-------------------------------------
+  Slideshow
+--------------------------------------*/
+.slideshow-container, .mySlides, .prev, .next, .text, .numbertext, .dot {
+  box-sizing:border-box;
 }
 
-.portfolio-nav-item > a:hover {
-  color: var(--orange);
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
 }
 
-.portfolio-section {
-  margin-top: 1.5em;
-  border-bottom: 1px dotted var(--medgrey);
-  width: 100%;
-  height: 230px;
-  display: flex;
+/* Hide the images by default */
+.mySlides {
+    display: none;
 }
 
-.portfoilio-section-image, .portfoilio-section-title {
-  height: 210px;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
 }
 
-.portfoilio-section-image {
-  width: 44%;
-  padding: 1em;
-  box-sizing: border-box;
+.prev {
+  left: -3em;
 }
 
-.portfoilio-section-image > img {
-  max-height: 180px;
+/* Position the "next button" to the right */
+.next {
+  right: -3em;
+  border-radius: 3px 0 0 3px;
 }
 
-.portfoilio-section-title {
-  width: 66%;
-  padding: 1em;
-  box-sizing: border-box;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-.portfolio-section-tech, .portfolio-section-description, .portfolio-section-title, .portfolio-section-sitelink {
-  border-bottom: 1px solid var(--medgrey);
-  padding: .7em 0;
-}
-
-.portfolio-section-sitelink a {
-  color: var(--orange);
-  text-decoration: none;
-}
-
-.portfolio-section-sitelink a:hover {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.portfolio-section-title {
-  padding-top: 0;
+/* Caption text */
+.text {
+  color: var(--darkgrey);
   font-size: 2em;
-}
-.portfolio-section-tech {
-  color: var(--blue);
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 5px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*-------------------------------------
+  Media queries
+--------------------------------------*/
 
 @media screen and (max-width: 960px) {
   .container {
