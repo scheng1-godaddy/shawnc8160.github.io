@@ -598,7 +598,7 @@ a:hover {
 
 @media screen and (max-width: 480px) {
   .container {
-    width: 300px;
+    width: 340px;
     padding-top: 15px;
   }
   .portrait {
