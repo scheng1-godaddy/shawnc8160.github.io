@@ -587,6 +587,112 @@ a:hover {
 }
 
 /*-------------------------------------
+  Modal
+--------------------------------------*/
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -10px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: var(--darkgrey);
+    margin: auto;
+    padding: 20px;
+    border: 10px solid grey;
+    width: 800px;
+    display: flex;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image-container{
+  width: 40%;
+  min-height: 300px;
+}
+
+.modal-content-container {
+  width: 60%;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title-container {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+}
+
+.modal-links-container {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dotted grey;
+  border-bottom: 1px dotted grey;
+}
+
+.modal-link {
+  padding: 0 15px;
+  color: var(--orange);
+}
+
+.modal-description-container {
+  width: 100%;
+  min-height: 100px;
+  padding: 1em;
+}
+
+.modal-title {
+  width: 65%;
+  padding: .5em;
+  color: white;
+  font-size: 3em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-tech {
+  width: 35%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.modal-tech td {
+  padding: .5em;
+  border-left: 1px dotted grey;
+}
+/*-------------------------------------
   Media queries
 --------------------------------------*/
 
