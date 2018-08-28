@@ -26,7 +26,11 @@ $(() => {
     event.stopImmediatePropagation();
   })
 
-  $('.text').hover((event) => {$('.slide-details').slideDown( "fast" )}, (event) => {$('.slide-details').slideUp( "fast" )});
+  $('.text').hover((event) => {
+    $('.slide-details').animate({width: '160px'})
+  }, (event) => {
+    $('.slide-details').animate({width: '1px'})
+  });
 
 
 })
