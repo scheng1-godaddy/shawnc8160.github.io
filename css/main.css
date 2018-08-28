@@ -669,6 +669,8 @@ a:hover {
   width: 100%;
   min-height: 100px;
   padding: 1em;
+  line-height: 1.5em;
+  font-size: 1.1em;
 }
 
 .modal-title {
