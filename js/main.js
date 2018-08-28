@@ -26,10 +26,22 @@ $(() => {
     event.stopImmediatePropagation();
   })
 
+  // $('.text').hover((event) => {
+  //   $('.slide-details').animate({width: '160px'}, {complete: () => {
+  //     $('.text li').slideDown( "fast" );
+  //   }})
+  // }, (event) => {
+  //   $('.slide-details').animate({width: '1px'}, {complete: () => {
+  //     $('.text li').slideUp( "fast" );
+  //   }})
+  // });
   $('.text').hover((event) => {
-    $('.slide-details').animate({width: '160px'})
+    $('.slide-details').animate({width: '160px'}, {complete: () => {
+      $('.text li').slideDown( "fast" );
+    }})
   }, (event) => {
-    $('.slide-details').animate({width: '1px'})
+    $('.text li').slideUp( "fast" );
+    $('.slide-details').animate({width: '1px'});
   });
 
 
