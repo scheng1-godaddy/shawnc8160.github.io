@@ -26,15 +26,7 @@ $(() => {
     event.stopImmediatePropagation();
   })
 
-  // $('.text').hover((event) => {
-  //   $('.slide-details').animate({width: '160px'}, {complete: () => {
-  //     $('.text li').slideDown( "fast" );
-  //   }})
-  // }, (event) => {
-  //   $('.slide-details').animate({width: '1px'}, {complete: () => {
-  //     $('.text li').slideUp( "fast" );
-  //   }})
-  // });
+  // Hover event for portfolio preview
   $('.text').hover((event) => {
     $('.slide-details').animate({width: '160px'}, {complete: () => {
       $('.text li').slideDown( "fast" );
@@ -44,7 +36,19 @@ $(() => {
     $('.slide-details').animate({width: '1px'});
   });
 
+  // Close modal
+  $(window).click((event) => {
+    if (event.target.id == "myModal") {
+      $(".modal").css('display', 'none');
+    }
+    event.stopImmediatePropagation();
+  })
 
+  $(".close").click((event) => {
+    console.log(event);
+    $(".modal").css('display', 'none');
+    event.stopImmediatePropagation();
+  })
 })
 
 
