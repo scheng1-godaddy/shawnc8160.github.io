@@ -265,169 +265,108 @@
         <div class="section-content-container"><!-- Holds section header and content -->
           <!-- Container for the entire portofolio section including menu -->
           <div class="portfolio-container">
-            <!-- Portfolio menu container -->
-            <div class="portfolio-menu-container">
-              <nav class="portfolio-nav">
-                <div class="portfolio-nav-item">
-                  <a href="#web-section">
-                  <i class="fas fa-globe"></i>&nbsp;&nbsp;Web
-                  </a>
-                </div>
-                <div class="portfolio-nav-item">
-                  <a href="#mobile-section">
-                    <i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Mobile
-                  </a>
-                </div>
-                <div class="portfolio-nav-item">
-                  <a href="#desktop-section">
-                    <i class="fas fa-desktop"></i>&nbsp;&nbsp;Desktop
-                  </a>
-                </div>
-              </nav>
-            </div>
+
             <!-- Container for all portfolio entries -->
             <div class="portfolio-content-container">
-
-              <!-- Header for web -->
-              <div id="web-section" class="resume-header medgrey-back">
-                <i class="fas fa-chevron-circle-down orange-font"></i>
-                <span class="white-font resume-titles"> WEB </span>
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
               </div>
+              <!-- Container for slideshow -->
+              <div class="slideshow-container">
 
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/aExIrog.png?1" alt="">
-                </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">Family Planner</span>
-                  <div class="portfolio-section-tech">
-                  Node.js  |  Express  |  React  |  Postgres
-                  </div>
-                  <div class="portfolio-section-description">
-                  A group calendar application that lets users schedule calendar entries that can be assigned to categories. Catergories are created by the user and can be assigned colors.
-                  </div>
-                  <div class="portfolio-section-sitelink"> <a href="https://family-planner-nerds.herokuapp.com/" target="_blank">
-                  &nbsp;<i class="fab fa-chrome"></i> &nbsp;Open Site </a> &nbsp;&nbsp;| &nbsp; &nbsp;<a href="https://github.com/shawnc8160/familyplanner" target="_blank"><i class="far fa-file-code"></i> &nbsp;See Code</a>
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 6</div>
+                  <img src="https://i.imgur.com/XxxlkCk.png" style="width:100%">
+                  <div class="text fade">
+                    <h2 class="expand">FamilyPlanner</h2>
+                    <ul class="slide-details">
+                      <li>Built with:</li>
+                      <li><i class="fab fa-node"></i> Node</li>
+                      <li><i class="fab fa-node-js"></i>  Express</li>
+                      <li><i class="fab fa-react"></i> React</li>
+                      <li><i class="fas fa-database"></i> Postgres</li>
+                      <li>Lean more</li>
+                    </ul>
                   </div>
                 </div>
-              </div><!-- Close for portfolio entry -->
 
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/IrjgOl7.png?1" alt="">
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 6</div>
+                  <img src="https://i.imgur.com/IrjgOl7.png?1" style="width:100%">
+                  <div class="text">Comic Stack</div>
                 </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">Comic Stack</span>
-                  <div class="portfolio-section-tech">
-                  Ruby  |  Rails  |  React  |  Postgres
-                  </div>
-                  <div class="portfolio-section-description">
-                  Search for your favorite comic books and comic book characters. Add them to your comic collection and favorite characters list.
-                  </div>
-                  <div class="portfolio-section-sitelink">
-                  &nbsp;<a href="https://damp-chamber-93117.herokuapp.com/" target="_blank"><i class="fab fa-chrome"></i> &nbsp;Open Site </a> &nbsp;&nbsp;| &nbsp; &nbsp;<a href="https://github.com/shawnc8160/ComicStack/" target="_blank"><i class="far fa-file-code"></i> &nbsp;See Code</a>
-                  </div>
-                </div>
-              </div><!-- Close for portfolio entry -->
 
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/MvnJopU.png?1" alt="">
-                </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">PlaylistR</span>
-                  <div class="portfolio-section-tech">
-                  Node  |  Express  |  Angular  |  MongoDB
-                  </div>
-                  <div class="portfolio-section-description">
-                  This site lets you search by artist or track and create custom playlists. Share with other users and add favorite playlist to your account.
-                  </div>
-                  <div class="portfolio-section-sitelink">
-                  &nbsp;<a href="https://csa-music-app.herokuapp.com/" target="_blank"><i class="fab fa-chrome"></i> &nbsp;Open Site</a> &nbsp;&nbsp;| &nbsp; &nbsp;<a href="https://github.com/shawnc8160/Playlistr" target="_blank"><i class="far fa-file-code"></i> &nbsp;See Code</a>
-                  </div>
-                </div>
-              </div><!-- Close for portfolio entry -->
-
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/dCcTKMu.png?1" alt="">
-                </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">What's for Dinner?</span>
-                  <div class="portfolio-section-tech">
-                  Node  |  Express  |  MongoDB
-                  </div>
-                  <div class="portfolio-section-description">
-                  A social site that lets users create profiles and create posts on what they're having for dinner (including a description and pictures). Users can browse other users and their creations. Users can like posts.
-                  </div>
-                  <div class="portfolio-section-sitelink">
-                  &nbsp;<a href="https://whatsfordinnerapp.herokuapp.com/" target="_blank"><i class="fab fa-chrome"></i> &nbsp;Open Site</a> &nbsp;&nbsp;| &nbsp; &nbsp;<a href="https://github.com/shawnc8160/project2" target="_blank"><i class="far fa-file-code"></i> &nbsp;See Code</a>
-                  </div>
-                </div>
-              </div><!-- Close for portfolio entry -->
-
-              <!-- Header for mobile -->
-              <div id="mobile-section" class="resume-header medgrey-back">
-                <i class="fas fa-chevron-circle-down orange-font"></i>
-                <span class="white-font resume-titles"> MOBILE </span>
-              </div>
-
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/He27w8T.png?1" alt="">
-                </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">Term Tracker</span>
-                  <div class="portfolio-section-tech">
-                  Java  |  Android SDK
-                  </div>
-                  <div class="portfolio-section-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                  </div>
-                  <div class="portfolio-section-sitelink">
-                  &nbsp;<i class="fab fa-chrome"></i> &nbsp;Download APK &nbsp;&nbsp;| &nbsp; &nbsp;<i class="far fa-file-code"></i> &nbsp;See Code
-                  </div>
-                </div>
-              </div><!-- Close for portfolio entry -->
-
-              <!-- Header for mobile -->
-              <div id="desktop-section" class="resume-header medgrey-back">
-                <i class="fas fa-chevron-circle-down orange-font"></i>
-                <span class="white-font resume-titles"> DESKTOP </span>
-              </div>
-
-              <!-- Portfolio entry start  -->
-              <div class="portfolio-section">
-                <div class="portfoilio-section-image">
-                  <img src="https://i.imgur.com/jIDFQIu.png?1" alt="">
-                </div>
-                <div class="portfoilio-section-title">
-                  <span class="portfolio-section-title block white-font">Scheduling App</span>
-                  <div class="portfolio-section-tech">
-                  Java  |  JavaFX
-                  </div>
-                  <div class="portfolio-section-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                  </div>
-                  <div class="portfolio-section-sitelink">
-                  &nbsp;<i class="fab fa-chrome"></i> &nbsp;Download JAR &nbsp;&nbsp;| &nbsp; &nbsp;<i class="far fa-file-code"></i> &nbsp;See Code
-                  </div>
-                </div>
-              </div><!-- Close for portfolio entry -->
-
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div> <!-- Slide show container close -->
 
             </div> <!-- Close for container that holds all portfolio entries -->
+
           </div>  <!--Close for container that holds entire portfolio section  -->
 
         </div> <!-- section content container close -->
 
       </section> <!-- section close -->
     </main>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+
+        <div class="modal-image-container">
+          <img src="https://via.placeholder.com/300x300" alt="">
+          <img src="https://via.placeholder.com/300x300" alt="">
+        </div>
+        <div class="modal-content-container">
+          <span class="close">&times;</span>
+          <div class="modal-title-container">
+            <div class="modal-title">
+              FamilyPlanner
+            </div>
+            <div class="modal-tech">
+              <table>
+                <tr>
+                  <td><i class="fab fa-node"></i></td>
+                  <td>Node</td>
+                </tr>
+                <tr>
+                  <td><i class="fab fa-node-js"></i></td>
+                  <td>Express</td>
+                </tr>
+                <tr>
+                  <td><i class="fab fa-react"></i></td>
+                  <td>React</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-database"></i></td>
+                  <td>Postgres</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="modal-links-container">
+            <div class="modal-link">
+              <i class="fab fa-chrome"></i>
+              Open Site
+            </div>
+            <div class="modal-link">
+              <i class="fas fa-code"></i>
+              See Code
+            </div>
+          </div>
+          <div class="modal-description-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </div> <!-- container close -->
 </body>

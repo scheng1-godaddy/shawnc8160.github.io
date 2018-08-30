@@ -4,11 +4,11 @@ $(() => {
   // Click handler to expand and contract resume section
   $('#resume-header').click((event) => {
     if ($('.resume-container').is( ":hidden" )) {
-      $('.resume-container').slideDown( "slow", () => {
+      $('.resume-container').slideDown( "fast", () => {
         $('.resume-container').css('display', 'flex');
       } );
     } else {
-      $('.resume-container').slideUp( "slow" );
+      $('.resume-container').slideUp( "fast" );
     }
     event.stopImmediatePropagation();
   })
@@ -17,13 +17,66 @@ $(() => {
   $('#portfolio-header').click((event) => {
     console.log('Clicked');
     if ($('.portfolio-container').is( ":hidden" )) {
-      $('.portfolio-container').slideDown( "slow" );
+      $('.portfolio-container').slideDown( "fast", () => {
+        $('.portfolio-container').css('display', 'flex');
+      } );
     } else {
-      $('.portfolio-container').slideUp( "slow" );
+      $('.portfolio-container').slideUp( "fast" );
     }
     event.stopImmediatePropagation();
   })
 
+  // Hover event for portfolio preview
+  $('.text').hover((event) => {
+    $('.slide-details').animate({width: '160px'}, {complete: () => {
+      $('.text li').slideDown( "fast" );
+    }})
+  }, (event) => {
+    $('.text li').slideUp( "fast" );
+    $('.slide-details').animate({width: '1px'});
+  });
+
+  // Close modal
+  $(window).click((event) => {
+    if (event.target.id == "myModal") {
+      $(".modal").css('display', 'none');
+    }
+    event.stopImmediatePropagation();
+  })
+
+  $(".close").click((event) => {
+    console.log(event);
+    $(".modal").css('display', 'none');
+    event.stopImmediatePropagation();
+  })
 })
 
-// $('.resume-container').css('display', 'none');
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}

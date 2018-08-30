@@ -420,106 +420,283 @@ a:hover {
 --------------------------------------*/
 .portfolio-container {
   width: 100%;
-  height: 700px;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
   position: relative;
-  display:none;
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: ease-in;
 }
 
-.portfolio-menu-container {
-  width: 147px;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .portfolio-content-container {
-  margin-left: 147px;
-  width: 81%;
-  max-height: 700px;
+  width: 90%;
+  max-height: 900px;
   box-sizing: border-box;
-  overflow-y: scroll;
-  padding: 2em;
+  padding: 1em;
 }
 
-.portfolio-nav {
+/*-------------------------------------
+  Slideshow
+--------------------------------------*/
+.slideshow-container, .mySlides, .prev, .next, .text, .numbertext, .dot {
+  box-sizing:border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev {
+  left: -3em;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: -3em;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: var(--white);
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.text > h2 {
+  background-color: rgba(40,40,40,.7);
+  padding: 30px 10px;
+  max-width: 160px;
+  box-sizing: border-box;
+}
+
+.text > ul {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1em 0;
+  text-align: left;
+  list-style: none;
+  background: var(--orange);
+  padding-left: 2em;
+  width: 0;
+  overflow-x: hidden;
+  transition: background-color 1s ease;
+}
+
+.text li {
+  display: none;
+  margin: 20px 0;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: -2.5em;
+  left: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 5px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Expand animation */
+.expand {
+  -webkit-animation-name: expand;
+  -webkit-animation-duration: 3s;
+  animation-name: expand;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes expand{
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes expand {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*-------------------------------------
+  Modal
+--------------------------------------*/
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -10px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: var(--darkgrey);
+    margin: auto;
+    padding: 20px;
+    border: 10px solid grey;
+    width: 800px;
+    display: flex;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image-container{
+  width: 40%;
+  min-height: 300px;
+}
+
+.modal-content-container {
+  width: 60%;
+  min-height: 300px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  height: 470px;
-  margin-top: 2em;
-  padding-right: 10px;
-  padding-top: 6em;
-  border-right: 1px dotted var(--medgrey);
 }
 
-.portfolio-nav-item {
-  padding: 1em;
-}
-
-.portfolio-nav-item > a {
-  text-decoration: none;
-  color: var(--grey);
-}
-
-.portfolio-nav-item > a:hover {
-  color: var(--orange);
-}
-
-.portfolio-section {
-  margin-top: 1.5em;
-  border-bottom: 1px dotted var(--medgrey);
+.modal-title-container {
   width: 100%;
-  height: 230px;
+  min-height: 100px;
   display: flex;
 }
 
-.portfoilio-section-image, .portfoilio-section-title {
-  height: 210px;
+.modal-links-container {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dotted grey;
+  border-bottom: 1px dotted grey;
 }
 
-.portfoilio-section-image {
-  width: 44%;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.portfoilio-section-image > img {
-  max-height: 180px;
-}
-
-.portfoilio-section-title {
-  width: 66%;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.portfolio-section-tech, .portfolio-section-description, .portfolio-section-title, .portfolio-section-sitelink {
-  border-bottom: 1px solid var(--medgrey);
-  padding: .7em 0;
-}
-
-.portfolio-section-sitelink a {
+.modal-link {
+  padding: 0 15px;
   color: var(--orange);
-  text-decoration: none;
 }
 
-.portfolio-section-sitelink a:hover {
-  color: var(--white);
-  text-decoration: none;
+.modal-description-container {
+  width: 100%;
+  min-height: 100px;
+  padding: 1em;
+  line-height: 1.5em;
+  font-size: 1.1em;
 }
 
-.portfolio-section-title {
-  padding-top: 0;
-  font-size: 2em;
-}
-.portfolio-section-tech {
-  color: var(--blue);
+.modal-title {
+  width: 65%;
+  padding: .5em;
+  color: white;
+  font-size: 3em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.modal-tech {
+  width: 35%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.modal-tech td {
+  padding: .5em;
+  border-left: 1px dotted grey;
+}
+/*-------------------------------------
+  Media queries
+--------------------------------------*/
 
 @media screen and (max-width: 960px) {
   .container {
