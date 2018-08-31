@@ -27,18 +27,23 @@ $(() => {
   })
 
   // Hover event for portfolio preview
+  // $('.text').hover((event) => {
+  //   $('.slide-details').animate({height: '230px'}, {complete: () => {
+  //     $('.slide-details-content').slideDown( "fast" );
+  //   }})
+  // }, (event) => {
+  //   $('.slide-details-content').slideUp( "fast" );
+  //   $('.slide-details').animate({height: '1px'});
+  // });
   $('.text').hover((event) => {
-    $('.slide-details').animate({width: '160px'}, {complete: () => {
-      $('.text li').slideDown( "fast" );
-    }})
+    $('.slide-details').slideDown( "fast" )
   }, (event) => {
-    $('.text li').slideUp( "fast" );
-    $('.slide-details').animate({width: '1px'});
+    $('.slide-details').slideUp( "fast" )
   });
 
   // Close modal
   $(window).click((event) => {
-    if (event.target.id == "myModal") {
+    if (event.target.classList && event.target.classList[0] == "modal") {
       $(".modal").css('display', 'none');
     }
     event.stopImmediatePropagation();
@@ -49,6 +54,19 @@ $(() => {
     $(".modal").css('display', 'none');
     event.stopImmediatePropagation();
   })
+
+  // Open family planner Modal
+  $('#family-planner-slide').click((event) => {
+    $('#modal-family-planner').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
+  // Open Comic Stack Modal
+  $('#comic-stack-slide').click((event) => {
+    $('#modal-comic-stack').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
 })
 
 
