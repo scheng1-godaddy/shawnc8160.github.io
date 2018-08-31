@@ -67,6 +67,36 @@ $(() => {
     event.stopImmediatePropagation();
   })
 
+  // Open playlistr modal
+  $('#playlistr-slide').click((event) => {
+    $('#modal-playlistr').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
+  // Open whats for dinner modal
+  $('#whats-for-dinner-slide').click((event) => {
+    $('#modal-whats-for-dinner').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
+  // Open connect4 modal
+  $('#connect4-slide').click((event) => {
+    $('#modal-connect4').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
+  // Open term tracker modal
+  $('#term-tracker-slide').click((event) => {
+    $('#modal-term-tracker').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
+  // Open scheduler modal
+  $('#scheduler-slide').click((event) => {
+    $('#modal-scheduler').css('display', 'block');
+    event.stopImmediatePropagation();
+  })
+
 })
 
 
