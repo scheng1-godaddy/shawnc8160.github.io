@@ -507,7 +507,7 @@ a:hover {
   position: relative;
   background-color: rgba(40,40,40,.8);
   padding: 30px 10px;
-  width: 160px;
+  width: 180px;
   box-sizing: border-box;
 }
 
@@ -597,12 +597,12 @@ a:hover {
 
 @-webkit-keyframes expand{
   0%   { width: 0; }
-  100% { width: 160px; }
+  100% { width: 180px; }
 }
 
 @keyframes expand {
   0%   { width: 0; }
-  100% { width: 160px; }
+  100% { width: 180px; }
 }
 
 /* Fading animation */
