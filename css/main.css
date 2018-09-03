@@ -647,8 +647,8 @@ a:hover {
     font-size: 28px;
     font-weight: bold;
     position: absolute;
-    top: -15px;
-    right: -10px;
+    top: 10px;
+    right: 10px;
 }
 
 /* Modal Content */
@@ -683,7 +683,6 @@ a:hover {
 
 .modal-content-container {
   width: 60%;
-  min-height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -834,13 +833,17 @@ a:hover {
   .modal-content {
     width: 400px;
     flex-direction: column;
-    max-height: 80%;
     overflow: scroll;
   }
   .modal-content-container, .modal-image-container {
     width: 100%;
   }
-
+  .modal-tech > table{
+    padding-bottom: 10px;
+  }
+  .modal-title-container {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -877,5 +880,11 @@ a:hover {
   }
   .section-nav-icon-container {
     display: none;
+  }
+  .modal-content {
+    width: 300px;
+  }
+  .modal-title {
+    font-size: 2.2em;
   }
 }
