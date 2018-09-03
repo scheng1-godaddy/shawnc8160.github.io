@@ -6,9 +6,11 @@ $(() => {
     if ($('.resume-container').is( ":hidden" )) {
       $('.resume-container').slideDown( "fast", () => {
         $('.resume-container').css('display', 'flex');
+        $('#resume-nav-title').addClass('green-back');
       } );
     } else {
       $('.resume-container').slideUp( "fast" );
+      $('#resume-nav-title').removeClass('green-back');
     }
     event.stopImmediatePropagation();
   })

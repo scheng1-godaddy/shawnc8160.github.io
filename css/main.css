@@ -98,7 +98,8 @@ body, html {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: var(--grey);
-  font-size: .85em;
+  font-size: .95em;
+  line-height: 1.5em;
 }
 
 h1 {
@@ -181,10 +182,14 @@ a:hover {
 .section-nav-title {
   padding: 15px;
   width: 120px;
-  height: 29px;
+  height: 24px;
   font-size: 1.6em;
   font-weight: bold;
   position: relative;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .section-nav-icon-container {
@@ -235,14 +240,16 @@ a:hover {
 
 .title h2 {
   font-size: 1.3em;
-  padding-top: .2em
+  padding-top: .8em
 }
 
 .title h1 {
+  font-size: 2.7em;
   min-width: 230px;
 }
 
 .title {
+  padding-top: 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -750,12 +757,18 @@ a:hover {
     padding-top: 30px;
   }
   .title h1 {
-    font-size: 2.2em;
+    font-size: 1.9em;
     min-width: 170px;
+  }
+  .title h2 {
+    font-size: 1.2em;
   }
   .portrait {
     width: 80px;
     height: 100px;
+  }
+  .modal {
+    padding-top: 80px;
   }
   .modal-image-container > img {
     max-width: 200px;
@@ -770,10 +783,6 @@ a:hover {
   .container {
     width: 400px;
     padding-top: 15px;
-  }
-  .title h1 {
-    font-size: 2.2em;
-    max-width: 50px;
   }
   #profile-header {
     flex-wrap: wrap;
@@ -827,13 +836,16 @@ a:hover {
   .slide-details-content h2, .slide-details-content table {
     display: none;
   }
+  .modal {
+    padding-top: 60px;
+  }
   .modal-image-container > img {
     max-width: 300px;
   }
   .modal-content {
     width: 400px;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
   }
   .modal-content-container, .modal-image-container {
     width: 100%;
@@ -847,6 +859,10 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
+  .title h1 {
+    font-size: 2.4em;
+    min-width: 170px;
+  }
   .container {
     width: 340px;
     padding-top: 15px;
