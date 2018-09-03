@@ -655,7 +655,7 @@ a:hover {
 .modal-content {
     background-color: var(--darkgrey);
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     border: 10px solid grey;
     width: 800px;
     display: flex;
@@ -669,6 +669,7 @@ a:hover {
 }
 
 .modal-image-container{
+  position: relative;
   width: 40%;
   min-height: 300px;
 }
@@ -679,6 +680,8 @@ a:hover {
   position: relative;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding-right: 20px;
 }
 
 .modal-title-container {
@@ -748,14 +751,11 @@ a:hover {
     width: 80px;
     height: 100px;
   }
-  .portfolio-menu-container {
-    width: 110px;
+  .modal-image-container > img {
+    max-width: 200px;
   }
-  .portfolio-content-container {
-    margin-left: 110px;
-  }
-  .portfoilio-section-image > img {
-    max-height: 120px;
+  .modal-content  {
+    width: 600px;
   }
 }
 
