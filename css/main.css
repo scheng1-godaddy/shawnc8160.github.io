@@ -668,10 +668,17 @@ a:hover {
     cursor: pointer;
 }
 
-.modal-image-container{
+.modal-image-container {
   position: relative;
   width: 40%;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image-container > img {
+  padding: 10px 0;
 }
 
 .modal-content-container {
@@ -821,6 +828,19 @@ a:hover {
   .slide-details-content h2, .slide-details-content table {
     display: none;
   }
+  .modal-image-container > img {
+    max-width: 300px;
+  }
+  .modal-content {
+    width: 400px;
+    flex-direction: column;
+    max-height: 80%;
+    overflow: scroll;
+  }
+  .modal-content-container, .modal-image-container {
+    width: 100%;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
