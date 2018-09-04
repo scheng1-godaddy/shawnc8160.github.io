@@ -1,42 +1,56 @@
 $(() => {
 
-  console.log('Starting');
+  // Click handler to expand and contract resume section
+  $('#profile-header').click((event) => {
+    if ($('#profile-title').is( ":hidden" )) {
+      $('#profile-nav-title-overlay').css('width', '100%');
+      $('#profile-description').slideDown( "fast" );
+      $('#profile-title').css('display', 'block');
+      $('#profile-nav-title').css('height', '100%')
+      $('.portrait').css('height', '130px');
+      $('.portrait').css('width', '110px');
+    } else {
+      $('#profile-nav-title-overlay').css('width', '0');
+      $('#profile-description').slideUp( "fast" );
+      $('#profile-title').css('display', 'none');
+      $('#profile-nav-title').css('height', '1px')
+      $('.portrait').css('height', '90px');
+      $('.portrait').css('width', '80px');
+    }
+    event.stopImmediatePropagation();
+  })
+
+
   // Click handler to expand and contract resume section
   $('#resume-header').click((event) => {
     if ($('.resume-container').is( ":hidden" )) {
       $('.resume-container').slideDown( "fast", () => {
         $('.resume-container').css('display', 'flex');
-        $('#resume-nav-title').addClass('green-back');
+        $('#resume-nav-title-overlay').css('width', '100%');
       } );
     } else {
       $('.resume-container').slideUp( "fast" );
-      $('#resume-nav-title').removeClass('green-back');
+      $('#resume-nav-title-overlay').css('width', '0');
     }
     event.stopImmediatePropagation();
   })
 
-  // Click handler to expand and contract resume section
+  // Click handler to expand and contract portfolio section
   $('#portfolio-header').click((event) => {
     console.log('Clicked');
     if ($('.portfolio-container').is( ":hidden" )) {
       $('.portfolio-container').slideDown( "fast", () => {
-        $('.portfolio-container').css('display', 'flex');
+        // $('.portfolio-container').css('display', 'flex');
+        $('#portfolio-nav-title-overlay').css('width', '100%');
       } );
     } else {
       $('.portfolio-container').slideUp( "fast" );
+      $('#portfolio-nav-title-overlay').css('width', '0');
     }
     event.stopImmediatePropagation();
   })
 
-  // Hover event for portfolio preview
-  // $('.text').hover((event) => {
-  //   $('.slide-details').animate({height: '230px'}, {complete: () => {
-  //     $('.slide-details-content').slideDown( "fast" );
-  //   }})
-  // }, (event) => {
-  //   $('.slide-details-content').slideUp( "fast" );
-  //   $('.slide-details').animate({height: '1px'});
-  // });
+
   $('.text').hover((event) => {
     $('.slide-details').slideDown( "fast" )
   }, (event) => {
