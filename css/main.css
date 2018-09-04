@@ -98,7 +98,7 @@ body, html {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: var(--grey);
-  font-size: .95em;
+  font-size: .9em;
   line-height: 1.5em;
 }
 
@@ -193,7 +193,7 @@ a:hover {
 
 .section-nav-title-overlay {
   width: 0;
-  height: 54px;
+  height: 56px;
   position: relative;
   display: flex;
   align-items: center;
@@ -258,7 +258,7 @@ a:hover {
 }
 
 .title h1 {
-  font-size: 2.7em;
+  font-size: 2.1em;
   min-width: 230px;
 }
 
@@ -388,7 +388,7 @@ a:hover {
   text-align: right;
   font-size: 1em;
   padding: 1.2em;
-  width: 8em;
+  width: 1em;
 }
 
 .skills-list {
@@ -465,6 +465,9 @@ a:hover {
   padding: 1em;
 }
 
+#profile-header {
+  /* border: 1px solid gold; */
+}
 /*-------------------------------------
   Slideshow
 --------------------------------------*/
@@ -775,7 +778,8 @@ a:hover {
     padding-top: 30px;
   }
   .title h1 {
-    font-size: 1.9em;
+    font-size: 1em;
+    border: 1px solid gold;
     min-width: 170px;
   }
   .title h2 {
@@ -793,6 +797,9 @@ a:hover {
   }
   .modal-content  {
     width: 600px;
+  }
+  .table-key-skills {
+    font-size: .9em;
   }
 }
 
@@ -896,7 +903,7 @@ a:hover {
     max-width: 3em;
   }
   .table-key-skills {
-    width: 4em;
+    width: 1em;
   }
   .portfolio-section {
     flex-direction: column;

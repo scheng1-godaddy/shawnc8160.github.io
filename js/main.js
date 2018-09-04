@@ -9,13 +9,17 @@ $(() => {
       $('#profile-nav-title').css('height', '100%')
       $('.portrait').css('height', '130px');
       $('.portrait').css('width', '110px');
+      $('.about-contact-container').slideDown("fast");
+      $('.section-header').css("padding", "2em");
     } else {
       $('#profile-nav-title-overlay').css('width', '0');
       $('#profile-description').slideUp( "fast" );
       $('#profile-title').css('display', 'none');
-      $('#profile-nav-title').css('height', '1px')
+      $('#profile-nav-title').css('height', '1px');
       $('.portrait').css('height', '90px');
       $('.portrait').css('width', '80px');
+      $('.about-contact-container').slideUp( "fast" );
+      $('.section-header').css("padding", "1em");
     }
     event.stopImmediatePropagation();
   })
