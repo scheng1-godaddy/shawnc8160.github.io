@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="section-chevron-container">
-            <i class="fas fa-chevron-circle-down upside-down"></i>
+            <i id="profile-chevron" class="fas fa-chevron-circle-down upside-down"></i>
           </div>
         </div>
         <div class="section-content-container"><!-- Holds section header and content -->
@@ -100,7 +100,7 @@
             </div>
           </div>
           <div class="section-chevron-container">
-            <i class="fas fa-chevron-circle-down"></i>
+            <i id="resume-chevron" class="fas fa-chevron-circle-down"></i>
           </div>
         </div>
         <div class="resume-container"><!-- Holds section header and content -->
@@ -265,7 +265,7 @@
             </div>
           </div>
           <div class="section-chevron-container">
-            <i class="fas fa-chevron-circle-down"></i>
+            <i id="portfolio-chevron" class="fas fa-chevron-circle-down"></i>
           </div>
         </div>
         <div class="section-content-container"><!-- Holds section header and content -->
@@ -538,6 +538,49 @@
         </div> <!-- section content container close -->
 
       </section> <!-- section close -->
+
+      <!--
+      Start contact Section
+      -->
+      <section id="contact-section" class="section-container darkgrey-back"> <!-- Holds the entire section (Profile) -->
+        <div id="contact-header" class="section-nav"> <!-- Holds section nav bar/title -->
+          <div id="contact-nav-title"  class="section-nav-title white-font">
+            <div id="contact-nav-title-overlay" class="section-nav-title-overlay pink-back">
+              <span id="contact-title" class="section-title">CONTACT</span>
+              <div class="section-nav-icon-container pink-back">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </div>
+          </div>
+          <div class="section-chevron-container">
+            <i id="contact-chevron" class="fas fa-chevron-circle-down"></i>
+          </div>
+        </div>
+        <div class="section-content-container"><!-- Holds section header and content -->
+
+          <div class="contact-container">
+
+            <form action="https://formspree.io/shawnc8160@gmail.com" method="POST">
+
+              <label for="name">NAME</label>
+              <input id="name" type="text" name="name" placeholder="Name">
+
+              <label for="email">EMAIL</label>
+              <input id="email" type="email" name="name" placeholder="Email">
+
+              <label for="message">MESSAGE</label>
+              <textarea id="message" name="message" placeholder="Your messsage." style="height:200px"></textarea>
+
+              <input type="submit" value="Submit">
+
+            </form>
+
+          </div>
+
+        </div> <!-- section content container close -->
+
+      </section> <!-- section close -->
+
     </main>
 
     <!-- Modal for Family Planner -->

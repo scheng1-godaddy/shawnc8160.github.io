@@ -11,6 +11,7 @@ $(() => {
       $('.portrait').css('width', '110px');
       $('.about-contact-container').slideDown("fast");
       $('.section-header').css("padding", "2em");
+      $('#profile-chevron').addClass('upside-down');
     } else {
       $('#profile-nav-title-overlay').css('width', '0');
       $('#profile-description').slideUp( "fast" );
@@ -20,6 +21,7 @@ $(() => {
       $('.portrait').css('width', '80px');
       $('.about-contact-container').slideUp( "fast" );
       $('.section-header').css("padding", "1em");
+      $('#profile-chevron').removeClass('upside-down');
     }
     event.stopImmediatePropagation();
   })
@@ -32,9 +34,11 @@ $(() => {
         $('.resume-container').css('display', 'flex');
         $('#resume-nav-title-overlay').css('width', '100%');
       } );
+      $('#resume-chevron').addClass('upside-down');
     } else {
       $('.resume-container').slideUp( "fast" );
       $('#resume-nav-title-overlay').css('width', '0');
+      $('#resume-chevron').removeClass('upside-down');
     }
     event.stopImmediatePropagation();
   })
@@ -44,12 +48,13 @@ $(() => {
     console.log('Clicked');
     if ($('.portfolio-container').is( ":hidden" )) {
       $('.portfolio-container').slideDown( "fast", () => {
-        // $('.portfolio-container').css('display', 'flex');
         $('#portfolio-nav-title-overlay').css('width', '100%');
       } );
+      $('#portfolio-chevron').addClass('upside-down');
     } else {
       $('.portfolio-container').slideUp( "fast" );
       $('#portfolio-nav-title-overlay').css('width', '0');
+      $('#portfolio-chevron').removeClass('upside-down');
     }
     event.stopImmediatePropagation();
   })
