@@ -801,6 +801,7 @@ a:hover {
 --------------------------------------*/
 
 .contact-container {
+  display: none;
   padding: 1.4em;
 }
 

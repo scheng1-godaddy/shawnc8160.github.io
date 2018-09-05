@@ -59,6 +59,22 @@ $(() => {
     event.stopImmediatePropagation();
   })
 
+  // Click handler to expand and contract portfolio section
+  $('#contact-header').click((event) => {
+    console.log('Clicked');
+    if ($('.contact-container').is( ":hidden" )) {
+      $('.contact-container').slideDown( "fast", () => {
+        $('#contact-nav-title-overlay').css('width', '100%');
+      } );
+      $('#contact-chevron').addClass('upside-down');
+    } else {
+      $('.contact-container').slideUp( "fast" );
+      $('#contact-nav-title-overlay').css('width', '0');
+      $('#contact-chevron').removeClass('upside-down');
+    }
+    event.stopImmediatePropagation();
+  })
+
 
   $('.text').hover((event) => {
     $('.slide-details').slideDown( "fast" )
