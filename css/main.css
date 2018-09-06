@@ -734,7 +734,10 @@ a:hover {
 }
 
 .modal-image-container > img {
-  padding: 10px 0;
+  margin: 10px 0;
+  width: 290px;
+  border: 8px solid var(--grey);
+  box-sizing: border-box;
 }
 
 .modal-content-container {
@@ -764,7 +767,19 @@ a:hover {
 
 .modal-link {
   padding: 0 15px;
+}
+
+.modal-link a {
   color: var(--orange);
+  text-decoration: none;
+}
+
+.modal-link a:hover {
+  color: var(--white);
+}
+
+.modal-icon {
+  color: var(--white);
 }
 
 .modal-description-container {
