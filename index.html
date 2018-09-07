@@ -718,7 +718,7 @@
           </div>
           <div class="modal-description-container">
             <p>ComicStack was one of my group projects while at General Assembly. My partner and I built this in 4 days and we had a ton of fun building this. We both loves comics and thought: wouldn’t it be cool to create a site to keep track of our comic collection — and the result was ComicStack. The concept is simple, you create an account, search for comic books and add it to your virtual collection. You can also keep a listing of your favorite characters. </p>
-            <p>ComicStack uses a RESTful API in the backend that was built with Ruby on Rails. We’re using an API provided by ComicVine (one of my favorite API’s so far). We’re using Postgres as the database and the frontend uses React. For CSS we ended up using the bulma framework. </p>
+            <p>ComicStack uses a RESTful API in the backend that was built with Ruby on Rails. Using various gems for JWT authentication and external API calls. The external API we're using is provided by ComicVine (one of my favorite API’s so far). We’re using Postgres as the database and the frontend uses React. For CSS we ended up using the bulma framework. </p>
             <p>Something for the future might be the ability to browse other collections. Maybe finding suggestions for new comics based on the users current collection. Definitely looking forward to working on this more. </p>
           </div>
         </div>
@@ -781,8 +781,11 @@
             </div>
           </div>
           <div class="modal-description-container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>PlaylistR’s concept is simple. You create custom playlists of your favorite music. You can find your music by searching for tracks or artist. You can view playlists created by other users. PlaylistR was the result of another group project (with 2 other contributors) during my tenure at General Assembly.</p>
+
+            <p>The app was built using the MEAN stack (Mongo, Express, Angular and Node). The backend uses RESTful routes (Node/Express) and stores its data in MongoDB. It also relies heavily on the lastFM API. When a user searches for track or artist we make an API call to lastFM and pull the track information from their catalog. When the user actually adds or remove a track we make a call to our REST API and store that in mongo. The frontend uses AngularJS. One of my favorite features (thanks to Angular) was the ability to filter playlists by tags. You could filter by artist, track name or other tags like genre and era (we’re pulling the tags from lastFM and storing that in the collection!). </p>
+
+            <p>Something for the future might be a way to actually stream the music from the app itself.</p>
           </div>
         </div>
 
