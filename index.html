@@ -292,9 +292,42 @@
         <div class="section-content-container"><!-- Holds section header and content -->
           <!-- Container for the entire portofolio section including menu -->
           <div class="portfolio-container">
+            <div class="portfolio-main-menu-container">
+              <span class="portfolio-show-link" onclick="showGallery()">Gallery</span>
+              <span class="portfolio-show-link" onclick="showSlideshow()">Slideshow</span>
+            </div>
+            <div class="portfolio-gallery-container">
+              <div class="portfolio-gallery-menu-container">
+                <span class="portfolio-show-link">Web</span>
+                <span class="portfolio-show-link">Mobile</span>
+                <span class="portfolio-show-link">Desktop</span>
+              </div>
+              <div class="portfolio-gallery-image web">
+                <div class="gallery-overlay">Hello</div>
+                <img src="https://i.imgur.com/uvxVBhA.png" alt="FamilyPlanner">
+              </div>
+              <div class="portfolio-gallery-image web">
+                <img src="https://i.imgur.com/Hq9NfkJ.png" alt="ComicStack">
+              </div>
+              <div class="portfolio-gallery-image web">
+                <img src="https://i.imgur.com/4l7NL9K.png" alt="PlayListR">
+              </div>
+              <div class="portfolio-gallery-image web">
+                <img src="https://i.imgur.com/MVfVKnr.png" alt="Whats For Dinner">
+              </div>
+              <div class="portfolio-gallery-image web">
+                <img src="https://i.imgur.com/QasVIP4.png" alt="Connect 4">
+              </div>
+              <div class="portfolio-gallery-image desktop">
+                <img src="https://i.imgur.com/jIDFQIu.png?2" alt="Scheduler">
+              </div>
+              <div class="portfolio-gallery-image mobile">
+                <img src="https://i.imgur.com/He27w8T.png?2" alt="Term Tracker">
+              </div>
+            </div>
 
-            <!-- Container for all portfolio entries -->
-            <div class="portfolio-content-container">
+            <!-- Container for slide container -->
+            <div class="portfolio-slide-container">
               <!-- The dots/circles -->
               <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -305,6 +338,7 @@
                 <span class="dot" onclick="currentSlide(6)"></span>
                 <span class="dot" onclick="currentSlide(7)"></span>
               </div>
+
               <!-- Container for slideshow -->
               <div class="slideshow-container">
 
@@ -552,7 +586,7 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
               </div> <!-- Slide show container close -->
 
-            </div> <!-- Close for container that holds all portfolio entries -->
+            </div> <!-- Close for container that holds portfolio slide-->
 
           </div>  <!--Close for container that holds entire portfolio section  -->
 

@@ -140,21 +140,28 @@ $(() => {
 
 })
 
+const showGallery = () => {
+  console.log('clicked');
+}
 
-var slideIndex = 1;
-showSlides(slideIndex);
+const showSlideshow = () => {
+  $('.portfolio-slide-container').css('display', 'block')
+  let slideIndex = 1;
+  showSlides(slideIndex);
+}
+
 
 // Next/previous controls
-function plusSlides(n) {
+const plusSlides = n => {
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+const currentSlide = n => {
   showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+const showSlides = n => {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -169,3 +176,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+let slideIndex = 1;
+showSlides(slideIndex);
