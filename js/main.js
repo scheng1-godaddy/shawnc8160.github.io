@@ -141,15 +141,52 @@ $(() => {
 })
 
 const showGallery = () => {
-  console.log('clicked');
+  $('.portfolio-slide-container').css('display', 'none')
+  $('.portfolio-gallery-container').css('display', 'flex');
+  $('#gallery-link').addClass('link-active');
+  $('#slideshow-link').removeClass('link-active');
 }
 
 const showSlideshow = () => {
   $('.portfolio-slide-container').css('display', 'block')
+  $('.portfolio-gallery-container').css('display', 'none');
+  $('#gallery-link').removeClass('link-active');
+  $('#slideshow-link').addClass('link-active');
   let slideIndex = 1;
   showSlides(slideIndex);
 }
 
+const displayGalleryAll = () => {
+  $('.web').css('display', 'block');
+  $('.mobile').css('display', 'block');
+  $('.desktop').css('display', 'block');
+  $('.portfolio-gallery-link').removeClass('link-active');
+  $('#all-link').addClass('link-active');
+}
+
+const displayGalleryWeb = () => {
+  $('.web').css('display', 'block');
+  $('.mobile').css('display', 'none');
+  $('.desktop').css('display', 'none');
+  $('.portfolio-gallery-link').removeClass('link-active');
+  $('#web-link').addClass('link-active');
+}
+
+const displayGalleryMobile = () => {
+  $('.web').css('display', 'none');
+  $('.mobile').css('display', 'block');
+  $('.desktop').css('display', 'none');
+  $('.portfolio-gallery-link').removeClass('link-active');
+  $('#mobile-link').addClass('link-active');
+}
+
+const displayGalleryDesktop = () => {
+  $('.web').css('display', 'none');
+  $('.mobile').css('display', 'none');
+  $('.desktop').css('display', 'block');
+  $('.portfolio-gallery-link').removeClass('link-active');
+  $('#desktop-link').addClass('link-active');
+}
 
 // Next/previous controls
 const plusSlides = n => {

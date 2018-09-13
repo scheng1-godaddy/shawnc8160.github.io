@@ -53,11 +53,11 @@
             <img class="portrait" src="https://i.imgur.com/y3Nqkr8.png" alt="Shawn Cheng">
 
             <div class="title">
-              <h1 class="white-font"> Shawn Cheng </h1>
+              <h1 class="white-font"> SHAWN CHENG </h1>
               <h2 class="blue-font"> Full Stack Developer </h2>
             </div>
 
-            <div class="about-contact-container">
+            <div class="about-contact-container fade">
               <table>
                 <tr>
                   <td class="table-key white-font"> <i class="far fa-envelope"></i> </td>
@@ -80,7 +80,7 @@
 
           </div>
 
-          <div id="profile-description" class="section-content"><!-- Holds section content -->
+          <div id="profile-description" class="section-content fade"><!-- Holds section content -->
             I am a software engineer who sees every day as an opportunity to learn something new. I’m dependable team player who has an inquisitive nature and a borderline obsession with finding a solution for problems. I pride myself with staying calm under pressure and I am a firm believer that maximizing growth comes from finding comfort in uncomfortable situations.
           </div>
 
@@ -293,17 +293,21 @@
           <!-- Container for the entire portofolio section including menu -->
           <div class="portfolio-container">
             <div class="portfolio-main-menu-container">
-              <span class="portfolio-show-link" onclick="showGallery()">Gallery</span>
-              <span class="portfolio-show-link" onclick="showSlideshow()">Slideshow</span>
+              <span id="gallery-link" class="portfolio-show-link link-active" onclick="showGallery()">Gallery</span>
+              <span id="slideshow-link" class="portfolio-show-link" onclick="showSlideshow()">Slideshow</span>
             </div>
             <div class="portfolio-gallery-container">
               <div class="portfolio-gallery-menu-container">
-                <span class="portfolio-show-link">Web</span>
-                <span class="portfolio-show-link">Mobile</span>
-                <span class="portfolio-show-link">Desktop</span>
+                <span id="all-link" class="portfolio-gallery-link link-active" onclick="displayGalleryAll()">All</span>
+                <span id="web-link" class="portfolio-gallery-link" onclick="displayGalleryWeb()">Web</span>
+                <span id="mobile-link" class="portfolio-gallery-link"  onclick="displayGalleryMobile()">Mobile</span>
+                <span id="desktop-link" class="portfolio-gallery-link"  onclick="displayGalleryDesktop()">Desktop</span>
               </div>
               <div class="portfolio-gallery-image web">
-                <div class="gallery-overlay">Hello</div>
+                <div class="gallery-overlay">
+                  <h3> FamilyPlanner</h3>
+
+                </div>
                 <img src="https://i.imgur.com/uvxVBhA.png" alt="FamilyPlanner">
               </div>
               <div class="portfolio-gallery-image web">
@@ -318,10 +322,10 @@
               <div class="portfolio-gallery-image web">
                 <img src="https://i.imgur.com/QasVIP4.png" alt="Connect 4">
               </div>
-              <div class="portfolio-gallery-image desktop">
+              <div class="portfolio-gallery-image desktop fade">
                 <img src="https://i.imgur.com/jIDFQIu.png?2" alt="Scheduler">
               </div>
-              <div class="portfolio-gallery-image mobile">
+              <div class="portfolio-gallery-image mobile fade">
                 <img src="https://i.imgur.com/He27w8T.png?2" alt="Term Tracker">
               </div>
             </div>
@@ -613,7 +617,7 @@
         </div>
         <div class="section-content-container"><!-- Holds section header and content -->
 
-          <div class="contact-container">
+          <div class="contact-container fade">
 
             <form action="https://formspree.io/shawnc8160@gmail.com" method="POST">
 
