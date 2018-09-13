@@ -288,8 +288,8 @@ a:hover {
 }
 
 .title h1 {
-  font-size: 2.1em;
-  min-width: 230px;
+  font-size: 3em;
+  min-width: 270px;
 }
 
 .title {
@@ -488,11 +488,111 @@ a:hover {
   animation-timing-function: ease-in;
 }
 
-.portfolio-content-container {
+.portfolio-gallery-container {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.portfolio-main-menu-container {
+  padding-right: 1em;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.portfolio-gallery-menu-container {
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+.gallery-overlay {
+  width: 255px;
+  height: 1px;
+  position: absolute;
+  color: white;
+  padding: 1em;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.overlay-content {
+  border-top: 1px dotted grey;
+  padding: 10px 0;
+}
+
+.gallery-overlay > h3 {
+  font-size: 1.3em;
+  color: var(--blue);
+}
+
+.portfolio-gallery-image:hover .gallery-overlay {
+  visibility: visible;
+  width: 255px;
+  height: 225px;
+}
+
+.portfolio-gallery-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1px;
+  height: 225px;
+}
+
+.portfolio-gallery-image img {
+  width: 255px;
+  height: 225px;
+}
+
+.portfolio-show-link {
+  font-size: 1.4em;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.portfolio-gallery-link {
+  border: 1px solid grey;
+  padding: .3em .8em;
+  margin: 2px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.portfolio-show-link:hover {
+  color: var(--blue);
+}
+
+.portfolio-gallery-link:hover {
+  color: white;
+  background-color: var(--blue);
+}
+
+.icon-active {
+  color: var(--blue);
+  cursor: default;
+}
+
+.link-active {
+  background-color: var(--blue);
+  color: white;
+  cursor: default;
+}
+
+.portfolio-slide-container {
+  display: none;
   width: 100%;
   max-height: 900px;
   box-sizing: border-box;
   padding: 1em;
+  margin-top: 20px;
 }
 
 /*-------------------------------------
@@ -860,7 +960,7 @@ input[type=submit]:hover {
   }
   .title h1 {
     font-size: 2em;
-    min-width: 170px;
+    min-width: 200px;
   }
   .title h2 {
     font-size: 1.2em;
@@ -884,6 +984,20 @@ input[type=submit]:hover {
   }
   .table-key-skills {
     font-size: .9em;
+  }
+  .portfolio-gallery-image img {
+    width: 310px;
+    height: 274px;
+  }
+  .gallery-overlay {
+    width: 310px
+  }
+  .portfolio-gallery-image:hover .gallery-overlay {
+    width: 310px;
+    height: 274px;
+  }
+  .portfolio-gallery-image {
+    height: 274px;
   }
 }
 
@@ -932,7 +1046,7 @@ input[type=submit]:hover {
   .portfolio-container {
     padding-bottom: 20px;
   }
-  .portfolio-content-container {
+  .portfolio-slide-container {
     margin: auto;
     margin-top: 3.3em;
     width: 90%;
@@ -964,6 +1078,9 @@ input[type=submit]:hover {
   }
   .modal-title-container {
     margin-bottom: 10px;
+  }
+  .portfolio-gallery-container {
+    justify-content: center;
   }
 }
 
