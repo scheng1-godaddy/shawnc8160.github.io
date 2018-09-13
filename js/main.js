@@ -97,43 +97,43 @@ $(() => {
   })
 
   // Open family planner Modal
-  $('#family-planner-slide').click((event) => {
+  $('#family-planner-slide, #family-planner-overlay').click((event) => {
     $('#modal-family-planner').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open Comic Stack Modal
-  $('#comic-stack-slide').click((event) => {
+  $('#comic-stack-slide, #comic-stack-overlay').click((event) => {
     $('#modal-comic-stack').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open playlistr modal
-  $('#playlistr-slide').click((event) => {
+  $('#playlistr-slide, #playlistr-overlay').click((event) => {
     $('#modal-playlistr').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open whats for dinner modal
-  $('#whats-for-dinner-slide').click((event) => {
+  $('#whats-for-dinner-slide, #whats-dinner-overlay').click((event) => {
     $('#modal-whats-for-dinner').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open connect4 modal
-  $('#connect4-slide').click((event) => {
+  $('#connect4-slide, #connect4-overlay').click((event) => {
     $('#modal-connect4').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open term tracker modal
-  $('#term-tracker-slide').click((event) => {
+  $('#term-tracker-slide, #term-tracker-overlay').click((event) => {
     $('#modal-term-tracker').css('display', 'block');
     event.stopImmediatePropagation();
   })
 
   // Open scheduler modal
-  $('#scheduler-slide').click((event) => {
+  $('#scheduler-slide, #scheduler-overlay').click((event) => {
     $('#modal-scheduler').css('display', 'block');
     event.stopImmediatePropagation();
   })
@@ -143,15 +143,15 @@ $(() => {
 const showGallery = () => {
   $('.portfolio-slide-container').css('display', 'none')
   $('.portfolio-gallery-container').css('display', 'flex');
-  $('#gallery-link').addClass('link-active');
-  $('#slideshow-link').removeClass('link-active');
+  $('#gallery-link').addClass('icon-active');
+  $('#slideshow-link').removeClass('icon-active');
 }
 
 const showSlideshow = () => {
   $('.portfolio-slide-container').css('display', 'block')
   $('.portfolio-gallery-container').css('display', 'none');
-  $('#gallery-link').removeClass('link-active');
-  $('#slideshow-link').addClass('link-active');
+  $('#gallery-link').removeClass('icon-active');
+  $('#slideshow-link').addClass('icon-active');
   let slideIndex = 1;
   showSlides(slideIndex);
 }

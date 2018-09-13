@@ -293,8 +293,8 @@
           <!-- Container for the entire portofolio section including menu -->
           <div class="portfolio-container">
             <div class="portfolio-main-menu-container">
-              <span id="gallery-link" class="portfolio-show-link link-active" onclick="showGallery()">Gallery</span>
-              <span id="slideshow-link" class="portfolio-show-link" onclick="showSlideshow()">Slideshow</span>
+              <span onclick="showGallery()"><i id="gallery-link" class="fas fa-th portfolio-show-link icon-active"></i></span>
+              <span onclick="showSlideshow()"><i id="slideshow-link" class="fas fa-tv portfolio-show-link"></i></span>
             </div>
             <div class="portfolio-gallery-container">
               <div class="portfolio-gallery-menu-container">
@@ -304,28 +304,87 @@
                 <span id="desktop-link" class="portfolio-gallery-link"  onclick="displayGalleryDesktop()">Desktop</span>
               </div>
               <div class="portfolio-gallery-image web">
-                <div class="gallery-overlay">
+                <div id="family-planner-overlay" class="gallery-overlay">
                   <h3> FamilyPlanner</h3>
-
+                  <div class="overlay-content">
+                    A family calendar. Add new appointments, create custom categories to organize events.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    React | Node | Express | Postgres
+                  </div>
                 </div>
                 <img src="https://i.imgur.com/uvxVBhA.png" alt="FamilyPlanner">
               </div>
               <div class="portfolio-gallery-image web">
+                <div id="comic-stack-overlay" class="gallery-overlay">
+                  <h3> ComicStack</h3>
+                  <div class="overlay-content">
+                    Search for Comics and favorite characters, add them to your collection
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    React | Ruby | Rails | Postgres
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/Hq9NfkJ.png" alt="ComicStack">
               </div>
               <div class="portfolio-gallery-image web">
+                <div id="playlistr-overlay" class="gallery-overlay">
+                  <h3> PlaylistR</h3>
+                  <div class="overlay-content">
+                    Search for music, add them to your playlist. View other playlists and add them to your favorites.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    AngularJS | Node | Express | MongoDB
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/4l7NL9K.png" alt="PlayListR">
               </div>
               <div class="portfolio-gallery-image web">
+                <div id="whats-dinner-overlay" class="gallery-overlay">
+                  <h3> What's For Dinner? </h3>
+                  <div class="overlay-content">
+                    Create a profile, post what you had for dinner. Share with others. Browse other profiles and postings. Like other posts.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    Node | Express | EJS | MongoDB
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/MVfVKnr.png" alt="Whats For Dinner">
               </div>
               <div class="portfolio-gallery-image web">
+                <div id="connect4-overlay" class="gallery-overlay">
+                  <h3> Emoji Connect 4</h3>
+                  <div class="overlay-content">
+                    Connect 4 with emoji's! Two player game. Select your emoji, drag your emoji over the board and drop into your column. Connect 4 to win.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    Javascript | JQuery
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/QasVIP4.png" alt="Connect 4">
               </div>
               <div class="portfolio-gallery-image desktop fade">
+                <div id="scheduler-overlay" class="gallery-overlay">
+                  <h3> Scheduler </h3>
+                  <div class="overlay-content">
+                    Lets consultants create appointments. Had monthly, weekly and daily views. Prevents overlapping appointments. Sets reminders.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    Java | JavaFX
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/jIDFQIu.png?2" alt="Scheduler">
               </div>
               <div class="portfolio-gallery-image mobile fade">
+                <div id="term-tracker-overlay" class="gallery-overlay">
+                  <h3> Term Tracker</h3>
+                  <div class="overlay-content">
+                    Android application that lets students track their current term or semester. Sets reminders for tests. Lets students keep notes for a particular class or test.
+                  </div>
+                  <div class="overlay-content lightgrey-font">
+                    Java | Android SDK
+                  </div>
+                </div>
                 <img src="https://i.imgur.com/He27w8T.png?2" alt="Term Tracker">
               </div>
             </div>

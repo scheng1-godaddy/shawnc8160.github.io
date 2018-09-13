@@ -501,7 +501,7 @@ a:hover {
   padding-right: 1em;
   position: absolute;
   right: 0;
-  top: 23px;
+  top: 15px;
 }
 
 .portfolio-gallery-menu-container {
@@ -523,6 +523,16 @@ a:hover {
   cursor: pointer;
 }
 
+.overlay-content {
+  border-top: 1px dotted grey;
+  padding: 10px 0;
+}
+
+.gallery-overlay > h3 {
+  font-size: 1.3em;
+  color: var(--blue);
+}
+
 .portfolio-gallery-image:hover .gallery-overlay {
   visibility: visible;
   width: 255px;
@@ -542,7 +552,13 @@ a:hover {
   height: 225px;
 }
 
-.portfolio-show-link, .portfolio-gallery-link {
+.portfolio-show-link {
+  font-size: 1.4em;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.portfolio-gallery-link {
   border: 1px solid grey;
   padding: .3em .8em;
   margin: 2px;
@@ -550,9 +566,18 @@ a:hover {
   cursor: pointer;
 }
 
-.portfolio-show-link:hover, .portfolio-gallery-link:hover {
+.portfolio-show-link:hover {
+  color: var(--blue);
+}
+
+.portfolio-gallery-link:hover {
   color: white;
   background-color: var(--blue);
+}
+
+.icon-active {
+  color: var(--blue);
+  cursor: default;
 }
 
 .link-active {
@@ -960,6 +985,20 @@ input[type=submit]:hover {
   .table-key-skills {
     font-size: .9em;
   }
+  .portfolio-gallery-image img {
+    width: 310px;
+    height: 274px;
+  }
+  .gallery-overlay {
+    width: 310px
+  }
+  .portfolio-gallery-image:hover .gallery-overlay {
+    width: 310px;
+    height: 274px;
+  }
+  .portfolio-gallery-image {
+    height: 274px;
+  }
 }
 
 
@@ -1039,6 +1078,9 @@ input[type=submit]:hover {
   }
   .modal-title-container {
     margin-bottom: 10px;
+  }
+  .portfolio-gallery-container {
+    justify-content: center;
   }
 }
 
