@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 :root {
-  --black: rgb(20,20,20);
+  --black: rgb(20, 20, 20);
   --grey: rgb(135, 135, 135);
-  --lightgrey:rgb(200, 200, 200);
-  --medgrey:rgb(55, 55, 55);
-  --darkgrey: rgb(40,40,40);
+  --lightgrey: rgb(200, 200, 200);
+  --medgrey: rgb(55, 55, 55);
+  --darkgrey: rgb(40, 40, 40);
   --white: white;
   --blue: #29ACCC;
   --orange: #F76731;
@@ -101,7 +101,8 @@
   /* border: 1px solid gold; */
 }
 
-body, html {
+body,
+html {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -163,7 +164,10 @@ a:hover {
 /*-------------------------------------
   Common container settings
 --------------------------------------*/
-.main-container, .section-container, .section-nav, .section-content {
+.main-container,
+.section-container,
+.section-nav,
+.section-content {
   width: 100%;
 }
 
@@ -198,8 +202,8 @@ a:hover {
 }
 
 .section-nav-title {
-  min-width: 120px;
-  max-width: 180px;
+  min-width: 160px;
+  max-width: 200px;
   font-size: 1.6em;
   font-weight: bold;
   position: relative;
@@ -248,7 +252,7 @@ a:hover {
   transition: all 0.5s ease;
 }
 
-.section-nav:hover > .section-chevron-container {
+.section-nav:hover>.section-chevron-container {
   color: var(--white);
 }
 
@@ -266,7 +270,9 @@ a:hover {
 /*-------------------------------------
   About Section
 --------------------------------------*/
-.portrait, .title, .about-contact-container {
+.portrait,
+.title,
+.about-contact-container {
   margin-right: 4em;
 }
 
@@ -277,7 +283,8 @@ a:hover {
   transition: 0.6s ease;
 }
 
-.title h1, h2 {
+.title h1,
+h2 {
   padding: 0;
   margin: 0;
 }
@@ -299,7 +306,7 @@ a:hover {
   justify-content: flex-start;
 }
 
-.section-content-container > .section-content {
+.section-content-container>.section-content {
   padding-top: 0;
 }
 
@@ -318,10 +325,11 @@ a:hover {
 #profile-nav-title-overlay {
   width: 100%;
 }
+
 /*-------------------------------------
   Resume Section
 --------------------------------------*/
-.resume-container{
+.resume-container {
   display: none;
   padding: 2em;
   width: 100%;
@@ -332,10 +340,21 @@ a:hover {
 }
 
 @keyframes fadein {
-    0%   {opacity: 0;}
-    25%  {opacity: .3;}
-    50%  {opacity: .6;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .3;
+  }
+
+  50% {
+    opacity: .6;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .resume-content {
@@ -395,7 +414,8 @@ a:hover {
   top: 0;
 }
 
-.resume-history-work-title, .resume-history-education-title {
+.resume-history-work-title,
+.resume-history-education-title {
   font-size: 1.4em;
 }
 
@@ -428,27 +448,27 @@ a:hover {
   margin-right: 0;
 }
 
-.skills-list-blue > li::before{
+.skills-list-blue>li::before {
   content: "›  ";
   color: var(--blue);
 }
 
-.skills-list-green > li::before{
+.skills-list-green>li::before {
   content: "›  ";
   color: var(--green);
 }
 
-.skills-list-pink > li::before{
+.skills-list-pink>li::before {
   content: "›  ";
   color: var(--pink);
 }
 
-.skills-list-orange > li::before{
+.skills-list-orange>li::before {
   content: "›  ";
   color: var(--orange);
 }
 
-.skills-list-yellow > li::before{
+.skills-list-yellow>li::before {
   content: "›  ";
   color: var(--yellow);
 }
@@ -457,19 +477,19 @@ a:hover {
   border-left: 3px solid var(--orange);
 }
 
-.skill-column-blue{
+.skill-column-blue {
   border-left: 3px solid var(--blue);
 }
 
-.skill-column-green{
+.skill-column-green {
   border-left: 3px solid var(--green);
 }
 
-.skill-column-pink{
+.skill-column-pink {
   border-left: 3px solid var(--pink);
 }
 
-.skill-column-yellow{
+.skill-column-yellow {
   border-left: 3px solid var(--yellow);
 }
 
@@ -528,7 +548,7 @@ a:hover {
   padding: 10px 0;
 }
 
-.gallery-overlay > h3 {
+.gallery-overlay>h3 {
   font-size: 1.3em;
   color: var(--blue);
 }
@@ -598,8 +618,14 @@ a:hover {
 /*-------------------------------------
   Slideshow
 --------------------------------------*/
-.slideshow-container, .mySlides, .prev, .next, .text, .numbertext, .dot {
-  box-sizing:border-box;
+.slideshow-container,
+.mySlides,
+.prev,
+.next,
+.text,
+.numbertext,
+.dot {
+  box-sizing: border-box;
 }
 
 /* Slideshow container */
@@ -610,12 +636,13 @@ a:hover {
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -640,8 +667,9 @@ a:hover {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -660,7 +688,7 @@ a:hover {
 
 .title-overlay {
   position: relative;
-  background-color: rgba(40,40,40,.8);
+  background-color: rgba(40, 40, 40, .8);
   padding: 30px 10px;
   width: 180px;
   box-sizing: border-box;
@@ -691,7 +719,7 @@ a:hover {
   margin: 0;
   padding: 2em 0;
   text-align: left;
-  background: rgba(25,25,25, .5);
+  background: rgba(25, 25, 25, .5);
   padding: 1em;
   transition: background-color 1s ease;
 }
@@ -704,6 +732,7 @@ a:hover {
 .learn-button:hover {
   background-color: var(--blue);
 }
+
 .slide-details-content h4 {
   font-size: 1.4em;
   font-weight: normal;
@@ -739,7 +768,8 @@ a:hover {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -751,14 +781,24 @@ a:hover {
   animation-duration: 1s;
 }
 
-@-webkit-keyframes expand{
-  0%   { width: 0; }
-  100% { width: 180px; }
+@-webkit-keyframes expand {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 180px;
+  }
 }
 
 @keyframes expand {
-  0%   { width: 0; }
-  100% { width: 180px; }
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 180px;
+  }
 }
 
 /* Fading animation */
@@ -770,58 +810,77 @@ a:hover {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /*-------------------------------------
   Modal
 --------------------------------------*/
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.85);
+  /* Black w/ opacity */
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: var(--darkgrey);
-    margin: auto;
-    padding: 15px;
-    border: 10px solid grey;
-    width: 800px;
-    display: flex;
+  background-color: var(--darkgrey);
+  margin: auto;
+  padding: 15px;
+  border: 10px solid grey;
+  width: 800px;
+  display: flex;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-image-container {
@@ -833,7 +892,7 @@ a:hover {
   align-items: center;
 }
 
-.modal-image-container > img {
+.modal-image-container>img {
   margin: 10px 0;
   width: 290px;
   border: 8px solid var(--grey);
@@ -926,27 +985,29 @@ label {
   width: 100%;
 }
 
-input[type=text], input[type=email], textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--medgrey);
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    background: var(--black);
+input[type=text],
+input[type=email],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--medgrey);
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: var(--black);
 }
 
 input[type=submit] {
-    background-color: var(--medgrey);
-    color: var(--grey);
-    padding: 8px 18px;
-    border: none;
-    cursor: pointer;
+  background-color: var(--medgrey);
+  color: var(--grey);
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 /*-------------------------------------
@@ -958,44 +1019,56 @@ input[type=submit]:hover {
     width: 650px;
     padding-top: 30px;
   }
+
   .title h1 {
     font-size: 2em;
     min-width: 200px;
   }
+
   .title h2 {
     font-size: 1.2em;
   }
+
   .portrait {
     width: 80px;
     height: 100px;
   }
+
   .modal {
     padding-top: 80px;
   }
+
   .modal-title {
     font-size: 2.5em;
     line-height: 1em;
   }
-  .modal-image-container > img {
+
+  .modal-image-container>img {
     max-width: 200px;
   }
-  .modal-content  {
+
+  .modal-content {
     width: 600px;
   }
+
   .table-key-skills {
     font-size: .9em;
   }
+
   .portfolio-gallery-image img {
     width: 310px;
     height: 274px;
   }
+
   .gallery-overlay {
     width: 310px
   }
+
   .portfolio-gallery-image:hover .gallery-overlay {
     width: 310px;
     height: 274px;
   }
+
   .portfolio-gallery-image {
     height: 274px;
   }
@@ -1007,34 +1080,45 @@ input[type=submit]:hover {
     width: 400px;
     padding-top: 15px;
   }
+
   #profile-header {
     flex-wrap: wrap;
   }
-  .portrait, .title, .about-contact-container {
+
+  .portrait,
+  .title,
+  .about-contact-container {
     margin-right: 1em;
   }
+
   .about-contact-container {
     padding-top: 2em;
     padding-left: 5em;
   }
+
   .resume-container {
     flex-wrap: wrap;
   }
+
   .resume-content-container {
     width: 90%;
   }
+
   .resume-skills-container {
     width: 90%;
     padding: 0;
   }
+
   #tech-skills-header {
     margin-top: 3em;
   }
+
   .portfolio-menu-container {
     width: 100%;
     height: 3.5em;
     border-bottom: 1px dotted var(--medgrey);
   }
+
   .portfolio-nav {
     flex-direction: row;
     justify-content: center;
@@ -1043,9 +1127,11 @@ input[type=submit]:hover {
     padding: 0;
     padding-top: .2em;
   }
+
   .portfolio-container {
     padding-bottom: 20px;
   }
+
   .portfolio-slide-container {
     margin: auto;
     margin-top: 3.3em;
@@ -1053,32 +1139,43 @@ input[type=submit]:hover {
     padding: 0;
     max-height: 500px;
   }
-  .portfoilio-section-image > img {
+
+  .portfoilio-section-image>img {
     max-height: 100px;
   }
-  .slide-details-content h2, .slide-details-content table {
+
+  .slide-details-content h2,
+  .slide-details-content table {
     display: none;
   }
+
   .modal {
     padding-top: 60px;
   }
-  .modal-image-container > img {
+
+  .modal-image-container>img {
     max-width: 300px;
   }
+
   .modal-content {
     width: 400px;
     flex-direction: column;
     overflow-y: scroll;
   }
-  .modal-content-container, .modal-image-container {
+
+  .modal-content-container,
+  .modal-image-container {
     width: 100%;
   }
-  .modal-tech > table{
+
+  .modal-tech>table {
     padding-bottom: 10px;
   }
+
   .modal-title-container {
     margin-bottom: 10px;
   }
+
   .portfolio-gallery-container {
     justify-content: center;
   }
@@ -1089,43 +1186,56 @@ input[type=submit]:hover {
     font-size: 2.4em;
     min-width: 170px;
   }
+
   .container {
     width: 340px;
     padding-top: 15px;
   }
+
   .portrait {
     display: none;
   }
+
   .about-contact-container {
     padding-top: 2em;
     padding-left: 1em;
   }
+
   .resume-history-work-title {
     max-width: 3em;
   }
+
   .table-key-skills {
     width: 1em;
   }
+
   .portfolio-section {
     flex-direction: column;
     height: 400px;
   }
-  .portfoilio-section-image, .portfoilio-section-title {
+
+  .portfoilio-section-image,
+  .portfoilio-section-title {
     height: 150px;
     width: 100%;
   }
-  .portfoilio-section-image > img {
+
+  .portfoilio-section-image>img {
     max-height: 190px;
   }
+
   .portfolio-section-title {
     margin-top: 40px;
   }
+
   .section-nav-icon-container {
     display: none;
   }
+
   .modal-content {
     width: 300px;
   }
+
   .modal-title {
     font-size: 2.2em;
   }
